@@ -1,45 +1,109 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Über mich</title>
+    <link rel="Stylesheet" href="stylesheet.css">
 </head>
+
 <body>
+    <nav>
+        <div id="navcontent">
+            <a href="index-2.html" class="activenav"><strong> Über Mich </strong></a>
+            <a href="Portfolio.html" class="nav"><strong> Portfolio </strong></a>
+            <a href="Kontakt.html" class="nav"><strong> Kontakt </strong></a>
+        </div>
+    </nav>
+
     <header>
-        <h1 id="nav">Navigation</h1>
-            <nav>
-                <ul>
-                    <li><a href="Portfolio.html">Portfolio</a></li>
-                    <li><a href="Kontakt.html">Kontaktdaten</a></li>
-                </ul>
-            </nav>
+        <h1 id="top">Über Mich</h1>
     </header>
     <main>
+        <div class="zitat"><i>"Code is like humor. When you have to explain it, it's bad."- Cory House (Software
+                Developer)</i></div>
+        <img src="pictures-HTML/me-kreis.jpg" class="gallery" alt="Ein Bild von Melanie">
+        <h2>
+            ~ Mini - Steckbrief ~
+        </h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
+            <table id="table-steckbrief">
+                <tbody>
+                    <tr>
+                        <td>
+                            Vorname
+                        </td>
+                        <td>
+                            Melanie
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Nachname
+                        </td>
+                        <td>
+                            Müller
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Lieblingstier
+                        </td>
+                        <td>
+                            Panda
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Lieblingsfarbe
+                        </td>
+                        <td>
+                            Alle pastell Farben~
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Lieblingsessen
+                        </td>
+                        <td>
+                            Ramen *o*
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Lieblings Game
+                        </td>
+                        <td>
+                            Genshin Impact
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </table>
+        <iframe width="780" height="400" src="https://www.youtube.com/embed/B8y3SSmz4sg" class="video"></iframe>
+        <p><b>Expert Ramen:</b> vorspulen auf 07:50 min!</p>
+        <h1>
+            Meine Hochschule
+        </h1>
+        <a href="https://www.hs-furtwangen.de/"><img src="pictures-HTML/Logo-HFU-kreis.jpg" class="gallery" alt="Ein Logo von der Hochschule"></a>
+        <div id="hfu-text">Ich studiere im schönen und kalten Schwarzwald an der Hochschule Furtwangen MIB und bin ganz gespannt auf weitere Aufgaben! GIS ist nach ComGra
+            einer meiner Favoriten. Daher arbeite ich sehr gerne an den vorgegeben Aufgaben.</div>
+        
+            <p>Zurück zu <a href="#top" class="zurück-top">"Über Mich"</a>.</p>
         <hr>
-        <h1>Über mich</h1>
-            <blockquote><cite>"Code is like humor. When you have to explain it, it's bad."</cite> - Cory House (Software Developer)</blockquote>
-                <img src="pictures-HTML/me.jpg" alt="Ein Bild von Melanie">
-                    <p>Hii! Mein Name ist Melanie, ich bin 21 Jahre jung und zocke sehr gerne <a href="https://genshin.mihoyo.com/en"><i>Genshin Impact. </i></a>Wenn ich hunger habe koche ich mir leckeres Essen oder gehe mit Freunden lecker essen (wie auf dem obigen Bild zusehen), damit ich wieder Energie fürs Zocken habe. c;</p>
-                    <p><b>Hier ein paar Beispiel - Videos:</b></p>
-                        <video width="520" src="videos/dance-1.mp4" controls loop></video>
-                        <video width="520" src="videos/dance-2.mp4" controls loop></video>
-                        <video width="520" src="videos/dance-3.mp4" controls loop></video>
-                    <p><b><em> !Vorsicht bei der Lautstärke! </em>Hier sind ein paar Beispiel Audios:</b></p> 
-                    <!--Kann sehr laut werden!! x.x-->
-                        <audio src="audio/audio1.mp3" controls></audio>
-                        <audio src="audio/audio2.mp3" controls></audio>
-                        <audio src="audio/audio3.mp3" controls></audio>
-                
-                <h2>
-                    Meine Hochschule
-                </h2>
-                    <img src="pictures-HTML/Logo-HFU.png" alt="Ein Logo von der Hochschule">
-                    <p>Ich studiere im schönen und kalten Schwarzwald an der <a href="https://www.hs-furtwangen.de/">Hochschule Furtwangen</a> MIB im 2.Semester und bin ganz gespannt auf weitere Aufgaben! :) GIS ist nach ComGra einer meiner Favoriten. Daher arbeite ich sehr gerne an den vorgegeben Aufgaben.</p>
-                    <p>Zurück zur <a href="#nav">Navigation</a>.</p>
-                    <hr>
-           
+
     </main>
     <footer>
         <small>
@@ -47,4 +111,5 @@
         </small>
     </footer>
 </body>
+
 </html>
