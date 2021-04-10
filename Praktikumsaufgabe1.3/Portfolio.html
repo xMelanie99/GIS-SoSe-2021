@@ -12,9 +12,9 @@
 <body>
     <nav>
         <div id="navcontent">
-            <a href="index-2.html"  class="nav"><strong> Über Mich </strong></a>
+            <a href="index-2.html" class="nav"><strong> Über Mich </strong></a>
             <a href="Portfolio.html" class="activenav"><strong> Portfolio </strong></a>
-            <a href="Kontakt.html"  class="nav"><strong>Kontakt </strong></a>
+            <a href="Kontakt.html" class="nav"><strong>Kontakt </strong></a>
         </div>
     </nav>
 
@@ -22,41 +22,80 @@
         <h1 id="top">Portfolio</h1>
     </header>
     <main>
-        <table>
-            <tbody>
-                    <td><img src="pictures-HTML/muesli.jpg" alt="Ein Bild von Müsli"></td>
-                    <td><img src="pictures-HTML/baecker.jpg" alt="Ein Bild von Bäcker Arbeit"></td>
-                    <div class="title">Produktfotos</div>
-                    <td><img src="pictures-HTML/wein.jpg" alt="Ein Bild von einer Weinflasche"></td>
-                </tr>
-                    <td><img src="pictures-HTML/ubahn.jpg" alt="Ein Bild in einer U-bahn"></td>
-                    <td><img src="pictures-HTML/vince.jpg" alt="Ein Bild aus Venedig"></td>
-                    <div class="title">streetphotographie</div>
-                    <td><img src="pictures-HTML/austria.jpg" alt="Ein Bild aus Österreich"></td>
-                </tr>
-                <tr>
-                    <td><img src="pictures-HTML/lights.jpg" alt="Ein Bild"></td>
-                    <td><img src="pictures-HTML/round-ps.jpg" alt="Ein Bild aus photoshop gemacht"></td>
-                    <td><img src="pictures-HTML/polygon-il.jpg" alt="Ein Bild aus Polygonen"></td>
-                </tr>
-                <tr>
-                    <td><img src="pictures-HTML/mirror.jpg" alt="Ein Bild von einer Person"></td>
-                    <td><img src="pictures-HTML/mirror-car.jpg" alt="Ein Bild von einer Person"></td>
-                    <td><img src="pictures-HTML/washingroom.jpg" alt="Ein Bild von einer Person"></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="pictures">
+            <img width="230" src="pictures-HTML/muesli.jpg" class="pic-style" alt="Müsli" />
+            <img width="230" src="pictures-HTML/baecker.jpg" class="pic-style" alt="Ein Bild von Bäcker Arbeit">
+            <img width="230" src="pictures-HTML/wein.jpg" class="pic-style" alt="Ein Bild von einer Weinflasche">
+        </div>
+        <div class="picture-text">
+            <p class="p">Prüfungsarbeit im <a href="https://www.glg-freiburg.de/schularten/berufskollegs/bk-foto-medientechnik/"
+                class="link">BKFM</a></p>
+            <p class="p">Freie Arbeit im <a href="https://www.glg-freiburg.de/schularten/berufskollegs/bk-foto-medientechnik/"
+                class="link">BKFM</a></p>
+            <p class="p">Kreative Arbeit im Praktikum bei <a href="https://bilger-fotodesign.de/" class="link">Florian Bilger</a></p>
+        </div>
+        <div class="pictures">
+            <img width="230" src="pictures-HTML/ubahn.jpg" class="pic-style" alt="Müsli" />
+            <img width="230" src="pictures-HTML/vince.jpg" class="pic-style" alt="Ein Bild von Bäcker Arbeit">
+            <img width="230" src="pictures-HTML/austria.jpg" class="pic-style" alt="Ein Bild von einer Weinflasche">
+        </div>
+        <div class="picture-text">
+            <p class="p">U-Bahn in Wien </p>
+            <p class="p">Venedig, Italien: Mutter mit ihrem Kind</p>
+            <p class="p">Rolltreppe in Wien</p>
+        </div>
+        <div class="pictures">
+            <img width="230" src="pictures-HTML/lights.jpg" class="pic-style" alt="Müsli" />
+            <img width="230" src="pictures-HTML/round-ps.jpg" class="pic-style" alt="Ein Bild von Bäcker Arbeit">
+            <img width="230" src="pictures-HTML/polygon-il.jpg" class="pic-style" alt="Ein Bild von einer Weinflasche">
+        </div>
+        <div class="picture-text">
+            <p class="p">Seepark in Freiburg</p>
+            <p class="p">360° Ansicht mit PS erstellt</p>
+            <p class="p">Polygon Tier mit IL erstellt</p>
+        </div>
+        <div class="pictures">
+            <img width="230" src="pictures-HTML/mirror.jpg" class="pic-style" alt="Müsli" />
+            <img width="230" src="pictures-HTML/mirror-car.jpg" class="pic-style" alt="Ein Bild von Bäcker Arbeit">
+            <img width="230" src="pictures-HTML/washingroom.jpg" class="pic-style" alt="Ein Bild von einer Weinflasche">
+        </div>
+        <div class="picture-text">
+            <p class="p">Portrait Bild in Freiburger Stadmitte</p>
+            <p class="p"><a href="https://www.die-oldtimer-galerie.de/de/"
+                class="link">Oldtimer Galerie</a> in Laufenburg</p>
+            <p class="p"><a href="https://www.washandart.de/"
+                class="link">Waschsalon</a> in Freiburg</p>
+        </div>
 
+        <div id="text">Weitere Bilder von mir sind auch auf <a href="https://www.instagram.com/rosalilapinkfresse/?hl=de"
+                class="link">Instagram</a> zusehen.</div>
 
-        <b>Meine Werke sind auch <a href="https://www.instagram.com/rosalilapinkfresse/?hl=de">hier</a> auf
-            Instagram.</b>
-        <p>Zurück zur <a href="#top">Portfolio</a>.</p>
-        <hr>
+        <p>Zurück zu <a href="#top" class="zurück-top">"Portfolio"</a>.</p>
     </main>
     <footer>
-        <small>
-            ©copyright-Test
-        </small>
+        <div class="box">
+            <p class="kontakt"> Impressum </p>
+            <p class="kontakt"> Melanie Müller </p>
+            <p class="kontakt"> Mustermannstraße 12 </p>
+            <p class="kontakt"> 74853 in Musterstadt </p>
+            <p class="kontakt"> E-Mail: <a href="mailto:melanie.panida.mueller@hs-furtwangen.de" class="link">
+                    melanie.panida.mueller@hs-furtwangen.de </a> </p>
+        </div>
+
+        <div class="box">
+            <aside>social media</aside>
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <div class="box2">
+                <a href="https://www.instagram.com/melanie.p.m_/?hl=de" class="fa fa-instagram"></a>
+            </div>
+            <div class="box2">
+                <a href="https://twitter.com/melanymos1" class="fa fa-twitter"></a>
+            </div>
+            <div class="box2">
+                <a href="https://de-de.facebook.com/" class="fa fa-facebook"></a>
+            </div>
+        </div>
     </footer>
 </body>
 
