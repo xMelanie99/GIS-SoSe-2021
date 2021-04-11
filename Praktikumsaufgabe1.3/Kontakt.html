@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="Stylesheet" href="stylesheet.css">
 </head>
 
@@ -17,54 +19,55 @@
             <a href="Kontakt.html" class="activenav"><strong>Kontakt</strong></a>
         </div>
     </nav>
+    <div id="top"></div>
 
-    <header>
-        <h1 id="top">Kontakt</h1>
-    </header>
     <main>
-        <h2>
-            Adresse<img src="pictures-HTML/adress1.png" alt="Ein Logo">
-        </h2>
-        <h6><i>Bild von <a
-                    href="https://pixabay.com/de/users/coffeebeanworks-558718/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1985148">Coffee
-                    Bean</a></i></h6>
-        <p>Melanie Müller </p>
-        <p>Musterstraße 12</p>
-        <p>74853 in Musterstadt</p>
-        <h2>
-            E-Mail<img src="pictures-HTML/mail.png" alt="Ein Logo">
-        </h2>
-        <h6><i>Bild von <a
-                    href="https://pixabay.com/de/users/coffeebeanworks-558718/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1985148">Coffee
-                    Bean</a></i></h6>
-        <p>melanie.panida.mueller@hs-furtwangen.de</p>
-        <h2>
-            Telefon<img src="pictures-HTML/number.png" alt="Ein Logo">
-        </h2>
-        <h6><i>Bild von <a
-                    href="https://pixabay.com/de/users/coffeebeanworks-558718/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1985148">Coffee
-                    Bean</a></i></h6>
-        <p><em>0123/4567890</em></p>
+        <h1>Kontakt</h1>
+        <div class="kontakt-box1">
+            <div class="kontakt-box">
+                <h3 class="h3-kontakt">KOMMEN SIE MIT MIR IN KONTAKT</h3>
+                <b>Hallo! Ich freue mich über eine Nachricht von dir.</b>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore
+                    et dolore magna aliquyam erat, sed diam voluptua.</p>
+            </div>
 
-        <h2>
-            social media<img src="pictures-HTML/insta.png" alt="Ein Logo"><img src="pictures-HTML/paimon-2.png"
-                alt="Eine Figur aus dem Spiel"><img src="pictures-HTML/discord.png" alt="Ein Logo">
-        </h2>
-        <h6>Bild von <a
-                href="https://pixabay.com/de/users/coffeebeanworks-558718/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1985148"><i>Coffee
-                    Bean</i></a>, <a
-                href="https://pixabay.com/de/users/cundrastudio-5844676/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5661078"><i>Tan
-                    Cundrawan</i></a> und <a
-                href="https://pixabay.com/de/users/b_zocholl-19721026/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6062235"><i>Benjamin
-                    Zocholl</i></a></h6>
-        <p><b>Instagram: </b><a href="https://www.instagram.com/melanie.mueller_offiziell/?hl=de">Melanie Müller</a> ;)
-        </p>
-        <!--just kidding c;-->
-        <p><b>Genshin Impact: </b><a href="https://www.hoyolab.com/genshin/accountCenter/gameRecord?id=65795037">Profil
-                von Setsuka</a></p>
-        <p><b>Discord: </b> Setsuka#1975 </p>
-        <blockquote>~ roses are red, violets are blue, omae wa mou shindeiru.~</blockquote>
-        <p>Zurück zu <a href="#top">Kontakt.</a></p>
+            <div class="kontakt-box">
+                <b>Rufen Sie mich an</b>
+                <p>0123/4567890</p>
+                <b>Standort</b>
+                <p>Mustermannstraße 12</p>
+                <p>78901 Musterstadt</p>
+                <div id="text-sm">
+                    <b>social media</b>
+                </div>
+                <div class="box-icon">
+                    <a href="https://www.instagram.com/melanie.p.m_/?hl=de" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/melanymos1" class="fa fa-twitter"></a>
+                    <a href="https://de-de.facebook.com/" class="fa fa-facebook"></a>
+                </div>
+            </div>
+        </div>
+        <div class="kontakt-box2">
+            <form action="action_page.php">
+                <b id="b-kontakt">Kontakt via Mail</b>
+                <p><input type="text" id="fname" placeholder="Vorname"></p>
+                <p><input type="text" id="lname" placeholder="Nachname"></p>
+                <p><input type="text" id="email" placeholder="E-Mail"></p>
+                <textarea id="subject" placeholder="Nachricht an mich..."></textarea>
+                <p class="Datenschutz">Mit Absenden der Nachricht bestätige ich den <a
+                        href="https://www.datenschutz.org/datenschutzerklaerung-muster.pdf"
+                        class="link">Datenschutz</a>.
+                <p class="Datenschutz"> Datenschutzangaben sind ohne Gewähr, gefunden auf: <a
+                        href="https://www.datenschutz.org/" class="link">Datenschutz.org</a></p>
+                </p>
+                <p><input id="senden" type="submit" value="absenden"></p>
+            </form>
+        </div>
+
+        <div id="h4">
+            <h4><a href="#top" class="zurück-top">Zurück nach oben.</a></h4>
+        </div>
     </main>
 
     <footer>
@@ -79,8 +82,6 @@
 
         <div class="box">
             <aside>social media</aside>
-            <link rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <div class="box2">
                 <a href="https://www.instagram.com/melanie.p.m_/?hl=de" class="fa fa-instagram"></a>
             </div>
@@ -91,6 +92,7 @@
                 <a href="https://de-de.facebook.com/" class="fa fa-facebook"></a>
             </div>
         </div>
+
     </footer>
 </body>
 
