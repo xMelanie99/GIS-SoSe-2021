@@ -88,7 +88,7 @@ div h1 {
 }
 
 div h2 {
-    color: #397e79; 
+    color: #43aaa3; 
 }
 
  /* allg. Überschriften */
@@ -179,7 +179,7 @@ h1, h2 {
 /*ZITAT - ÜBER MICH*/
 
 div ~ table {
-    color:rgb(111, 163, 161);
+    color:rgb(141, 182, 180);
     font-size: 30px;
 }
 
@@ -236,9 +236,21 @@ div ~ table {
 /*PORTFOLIO-SEITE*/
 
 
+/*Attribute*/
+a[href="https://www.glg-freiburg.de/schularten/berufskollegs/bk-foto-medientechnik/"] {
+    color: rgb(0, 38, 255);
+}
 
-a [href="https://www.glg-freiburg.de/schularten/berufskollegs/bk-foto-medientechnik/"] {
-    color: red;
+a[href="https://bilger-fotodesign.de/"] {
+    color: rgb(0, 255, 242);
+}
+
+a[href="https://www.die-oldtimer-galerie.de/de/"] {
+    color: rgb(146, 82, 104);
+}
+
+a[href="https://www.washandart.de/"] {
+    color: rgb(211, 58, 211);
 }
 /*BILDERUNTERSCHRIFT*/
 .picture-text  {
@@ -285,6 +297,16 @@ a [href="https://www.glg-freiburg.de/schularten/berufskollegs/bk-foto-medientech
 /*KONTAKT-SEITE*/
 
 
+
+/*Pseudo-Test*/
+span::before {
+    content: "Pseudo Test";
+    color: black;
+    background: rgba(76, 150, 54, 0.712);
+    width: 55px;
+    height: 35px;
+    display: inline-block;
+}
 
 /*Überschriften*/
 #h4 h4 {
