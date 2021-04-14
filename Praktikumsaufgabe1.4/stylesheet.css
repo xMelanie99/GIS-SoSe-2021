@@ -29,7 +29,8 @@ strong {
     padding: 10px;
 }
 
-#navcontent {                                                   /*NAVIGATION*/
+/*NAVIGATION*/
+#navcontent {
     position: relative;
     right: 0;
     padding: 20px 2px 20px 10px;
@@ -40,15 +41,17 @@ strong {
     background-color: #aeccae;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.322);
 }
-    
-#navcontent a:hover {                                           /*Maus-HOVER*/
+
+/*Maus-HOVER*/
+#navcontent a:hover {                                           
     padding: 10px 0px 10px 0px;
     border-radius: 40%;
 
     background-color:rgba(147, 161, 147, 0.603);
 } 
-    
-.activenav {                                                    /*aktive Seite*/
+
+/*aktive Seite*/
+.activenav {                                                    
     box-shadow: 2px 2px 2px 2px rgba(61, 60, 60, 0.13);  
     border-radius: 40%;
     padding: 10px 0px 10px 0px;
@@ -58,49 +61,56 @@ strong {
     background-color: rgba(115, 167, 115, 0.534);
 }
 
-
-a.nav {                                                         /*Link*/
+ /*Link*/
+a.nav {                                                        
     text-decoration: none;
 }
 
-strong {                                                        /*weisse Navi Schrift*/
+/*weisse Navi Schrift*/
+strong {                                                        
     color: white;
 } 
 
-nav {                                                           /*fixierte Navigation*/
+ /*fixierte Navigation*/
+nav {                                                          
     position: sticky;
     top: 0;
 }
 
+ /*Obere Abstand*/
 header {
-    background-color: rgb(245, 255, 245);                                                       /*Obere Abstand*/
+    background-color: rgb(245, 255, 245);                                                      
     margin-top: 20px;
 }
 
+ /* allg. Überschriften */
 h1, h2 {   
-    color: #aeccae;                                                     /* allg. Überschriften */
+    color: #aeccae;                                                    
     display: flex;
     height: 150px;
     justify-content: center;
     align-items: center; 
 } 
 
+/*TOP Sprung*/
 .zurück-top {  
     display: flex;
     height: 200px;
     justify-content: center;
-    align-items: center;                                                 /*TOP Sprung*/
+    align-items: center;                                                 
     text-decoration: none;
 
     color: #aeccae;
 }
 
-.zurück-top:hover {                                             /*Sprung HOVER*/
+/*Sprung HOVER*/
+.zurück-top:hover {                                             
     color:rgb(115, 167, 115);
 }
 
+ /*footer-IMPRESSUM*/
 .box {
-    font-size: small;                                                          /*footer-IMPRESSUM*/
+    font-size: small;                                                         
     text-align: center;
     float: left;
     padding: 50px;
@@ -111,7 +121,11 @@ h1, h2 {
     background-color: rgba(57, 70, 53, 0.932);
     color:rgba(201, 198, 198, 0.952);
 } 
+.kontakt {
+    margin: 5px;
+}
 
+/*social media - Box-Modell*/
 .box2 {
     text-align: center;
     float: left;
@@ -120,113 +134,14 @@ h1, h2 {
     box-sizing: border-box;
 }
 
-.kontakt {
-    margin: 5px;
-
-}
-
-
-/*ÜBER MICH*/
-
-
-
-.zitat {                                                        /*ZITAT*/ 
-    text-align: center;
-    padding: 20px;
-    height: 50px;
-}
-
-
-.gallery {                                                      /*BILDER*/
-    display: block;
-    width: 198px; 
-    height: auto;
-    margin: 0 auto;
-    padding: 25px;
-    border-radius: 50%;
-}
-
-/*#img-link a:hover {
-    background-color:red;
-} */
-
-#table-steckbrief td{                                           /*TABELLE*/ 
-    padding: 20px 50px 20px 50px;
-    text-align: center;
-    border: 2px solid #aeccaea6;
-    background-color:rgba(230, 245, 230, 0.5);
-}
-
-#table-steckbrief {                                             /*TABELLE ZENTRIERUNG*/
-    margin: auto;
-    padding: 0 0 50px 0;
-    border: 5px solid transparent;
-}
-
-
-.video {                                                        /*VIDEO ZENTRIERUNG*/
-    display: block;
-    margin: 0 auto;
-}
-
-.ramen-text {
-    text-align: center;
-}
-
-#hfu-text {                                                     /*HFU-TEXT ZENTRIERUNG*/
-    text-align: center;
-    padding: 20px;
-}
-
-/*section{
-    Width: 100%;
-    Height 300vh;
-    }*/
-
-
-/*PORTFOLIO-SEITE*/
-
-
-.picture-text  {
-    flex-direction: row;
-    display: flex;
-}
-
-.p {
-    text-align: center;
-    width: 270px;
-
-}
-
-.pic-style {                                                    /*einzelne BILDER */
-    border-radius: 50%;
-    margin: 10px;
-
-    border: 5px solid #aeccaead;
-    box-shadow: 2px 2px 2px 2px rgba(61, 60, 60, 0.138);
-} 
-
-.link {                                                     /*Instagram style*/
-    text-decoration: none;
-
-    color:  #aeccae;
-}
-
-.link:hover {                                               /*Instagram HOVER*/
-    color: rgb(115, 167, 115);
-}
-
-#text {                                                     /*Text - zentriert*/                                                      
-    text-align: center;
-    padding: 60px 0 50px 0;
-}
-
+/* social media - Icons*/
 .fa {
     font-size: 30px;
     text-decoration: none;
     width: 10%;
 }
 
+/*social media - HOVER*/
 .fa:hover {
     color: rgb(115, 167, 115);
   }
@@ -248,10 +163,124 @@ h1, h2 {
 
 
 
+/*ÜBER MICH*/
+
+
+
+/*ZITAT - ÜBER MICH*/
+.zitat {                                                          
+    text-align: center;
+    padding: 20px;
+    height: 50px;
+}
+
+/*BILDER*/
+.gallery {                                                       
+    display: block;
+    width: 198px; 
+    height: auto;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 50%;
+}
+
+/*TABELLE*/
+#table-steckbrief td{                                          
+    padding: 20px 50px 20px 50px;
+    text-align: center;
+    border: 2px solid #aeccaea6;
+    background-color:rgba(230, 245, 230, 0.5);
+}
+
+/*TABELLE ZENTRIERUNG*/
+#table-steckbrief {                                             
+    margin: auto;
+    padding: 0 0 50px 0;
+    border: 5px solid transparent;
+}
+
+/*VIDEO ZENTRIERUNG*/
+.video {                                                        
+    display: block;
+    margin: 0 auto;
+}
+
+/* TEXT unter dem Video*/
+.ramen-text {
+    text-align: center;
+}
+
+ /*HFU-TEXT ZENTRIERUNG*/
+#hfu-text {                                                    
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+/*PORTFOLIO-SEITE*/
+
+
+
+/*BILDERUNTERSCHRIFT*/
+.picture-text  {
+    flex-direction: row;
+    display: flex;
+}
+
+/*BILDERUNTERSCHRIFT-TEXT*/
+.p {
+    text-align: center;
+    width: 270px;
+
+}
+
+/*einzelne BILDER */
+.pic-style {                                                   
+    border-radius: 50%;
+    margin: 10px;
+
+    border: 5px solid #aeccaead;
+    box-shadow: 2px 2px 2px 2px rgba(61, 60, 60, 0.138);
+} 
+
+/*Instagram style*/
+.link {                                                    
+    text-decoration: none;
+
+    color:  #aeccae;
+}
+
+/*Instagram HOVER*/
+.link:hover {                                               
+    color: rgb(115, 167, 115);
+}
+
+ /*Text - zentriert*/
+#text {                                                                                                          
+    text-align: center;
+    padding: 60px 0 50px 0;
+}
+
+
+
 /*KONTAKT-SEITE*/
 
+
+
+/*Überschriften*/
+#h4 h4 {
+    margin:0;
+}
+
+/*Haupttext*/
+.kontakt-box1 {
+    font-size: medium;  
+    display: flex;
+}
+
 .kontakt-box {
-    font-size: medium;                                                   /*footer-IMPRESSUM*/
+    font-size: medium;                                                   
     text-align: center;
     width: 100%;
     box-sizing: border-box;
@@ -261,48 +290,28 @@ h1, h2 {
     background-color: rgb(245, 255, 245);
 }
 
-.kontakt-box1 {
-    font-size: medium;  
-    display: flex;
-  
-}
-.kontakt-box2 {
-    text-align: center;
-    margin-top: 50px;
-}
-#h4 h4 {
-    margin:0;
+#text-sm {
+    margin: 13px;
 }
 
+/*ICONS im Hauptext*/
 .box-icon {
-    font-size: 20px;                                                          /*footer-IMPRESSUM*/
+    font-size: 20px;                                                          
     text-align: center;
     width: 100%;
     box-sizing: border-box;
  
 }
 
-#text-sm {
-    margin: 13px;
+.kontakt-box2 {
+    text-align: center;
+    margin-top: 50px;
 }
 
-#subject {
-    height: 100px;
-    width: 400px;
+#b-kontakt{
+    font-size: 30px;
 }
 
-.p-Kontakt {
-    width: 50%;
-}
-
-.Datenschutz {
-    color: grey;
-    font-size: small;
-}
-
-.h3-kontakt {
-    margin-top: 0;
-}
 
 input {
     font-family: sans-serif;
@@ -311,12 +320,31 @@ input {
     border: 1px solid grey;
 }
 
+#subject {
+    height: 100px;
+    width: 400px;
+}
+
+/* Datenschutz*/
+.Datenschutz {
+    color: grey;
+    font-size: small;
+}
+
+.p-Kontakt {
+    width: 50%;
+}
+
+
+.h3-kontakt {
+    margin-top: 0;
+}
+
+
 textarea {
     font-family: sans-serif;
 }
-#b-kontakt{
-    font-size: 30px;
-}
+
 
 #senden {
     background-color: rgb(255, 255, 255);
