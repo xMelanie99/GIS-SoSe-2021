@@ -83,14 +83,23 @@ header {
     margin-top: 20px;
 }
 
+div h1 {
+    color: rgba(64, 119, 58, 0.932);
+}
+
+div h2 {
+    color: #397e79; 
+}
+
  /* allg. Überschriften */
-h1, h2 {   
-    color: #aeccae;                                                    
+h1, h2 {
     display: flex;
     height: 150px;
     justify-content: center;
     align-items: center; 
-} 
+}
+
+
 
 /*TOP Sprung*/
 .zurück-top {  
@@ -168,6 +177,12 @@ h1, h2 {
 
 
 /*ZITAT - ÜBER MICH*/
+
+div ~ table {
+    color:rgb(111, 163, 161);
+    font-size: 30px;
+}
+
 .zitat {                                                          
     text-align: center;
     padding: 20px;
@@ -222,6 +237,9 @@ h1, h2 {
 
 
 
+a [href="https://www.glg-freiburg.de/schularten/berufskollegs/bk-foto-medientechnik/"] {
+    color: red;
+}
 /*BILDERUNTERSCHRIFT*/
 .picture-text  {
     flex-direction: row;
@@ -290,6 +308,7 @@ h1, h2 {
     background-color: rgb(245, 255, 245);
 }
 
+/*social media Text*/
 #text-sm {
     margin: 13px;
 }
@@ -312,7 +331,7 @@ h1, h2 {
     font-size: 30px;
 }
 
-
+/*Kontaktfelder*/
 input {
     font-family: sans-serif;
     background-color: rgb(255, 255, 255);
@@ -320,6 +339,7 @@ input {
     border: 1px solid grey;
 }
 
+/*Nachrichtfeld*/
 #subject {
     height: 100px;
     width: 400px;
@@ -331,27 +351,24 @@ input {
     font-size: small;
 }
 
-.p-Kontakt {
-    width: 50%;
-}
-
 
 .h3-kontakt {
     margin-top: 0;
 }
 
-
+/*Schriftart im Nachrichtfeld*/
 textarea {
     font-family: sans-serif;
 }
 
-
+/* senden Button*/
 #senden {
     background-color: rgb(255, 255, 255);
     border: 1px solid grey;
     
 } 
 
+/*senden hover*/
 #senden:hover {
     background-color:rgb(115, 167, 115);
 }
