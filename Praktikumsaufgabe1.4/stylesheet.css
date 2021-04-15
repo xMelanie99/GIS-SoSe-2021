@@ -83,12 +83,18 @@ header {
     margin-top: 20px;
 }
 
+/*Nachfahren*/
 div h1 {
     color: rgba(64, 119, 58, 0.932);
 }
 
 div h2 {
-    color: #43aaa3; 
+    color: #7dc789; 
+}
+
+/*Folgeelement*/
+h3+b {
+    background-color:rgba(198, 235, 203, 0.521);
 }
 
  /* allg. Überschriften */
@@ -176,13 +182,13 @@ h1, h2 {
 
 
 
-/*ZITAT - ÜBER MICH*/
-
+/*Geschwister*/
 div ~ table {
     color:rgb(141, 182, 180);
     font-size: 30px;
 }
 
+/*ZITAT*/
 .zitat {                                                          
     text-align: center;
     padding: 20px;
@@ -300,11 +306,9 @@ a[href="https://www.washandart.de/"] {
 
 /*Pseudo-Test*/
 span::before {
-    content: "Pseudo Test";
-    color: black;
-    background: rgba(76, 150, 54, 0.712);
+    content: "-";
     width: 55px;
-    height: 35px;
+    height: 15px;
     display: inline-block;
 }
 
@@ -383,7 +387,7 @@ textarea {
     font-family: sans-serif;
 }
 
-/* senden Button*/
+/*senden Button*/
 #senden {
     background-color: rgb(255, 255, 255);
     border: 1px solid grey;
@@ -395,6 +399,45 @@ textarea {
     background-color:rgb(115, 167, 115);
 }
 
+@keyframes rainbow {
+    0%   {background-color:#f8e5e5; left:0px; top:0px;}
+    25%  {background-color:rgb(245, 245, 168); left:200px; top:0px;}
+    50%  {background-color:rgb(159, 233, 169); left:200px; top:200px;}
+    75%  {background-color:rgb(150, 215, 235); left:0px; top:200px;}
+    100% {background-color:rgb(241, 230, 245); left:0px; top:0px;}
+  }
+  
+.animation {
+    animation-name: rainbow;
+    width: 80px;
+    height: 50px;
+    animation-duration: 4s ;
+    animation-iteration-count:infinite;
+}
 
+@keyframes uwu {
+    0%   {color:#f8e5e5; left:0px; top:0px;}
+    25%  {color:rgb(245, 245, 168); left:200px; top:0px;}
+    50%  {color:rgb(159, 233, 169); left:200px; top:200px;}
+    75%  {color:rgb(150, 215, 235); left:0px; top:200px;}
+    100% {color:rgb(241, 230, 245); left:0px; top:0px;}
+  }
 
+.fa-instagram{
+    animation-name: uwu;
+    animation-duration: 4s ;
+    animation-iteration-count:infinite;
+}
+
+.fa-twitter{
+    animation-name: uwu;
+    animation-duration: 4s ;
+    animation-iteration-count:infinite;
+}
+
+.fa-facebook{
+    animation-name: uwu;
+    animation-duration: 4s ;
+    animation-iteration-count:infinite;
+}
 
