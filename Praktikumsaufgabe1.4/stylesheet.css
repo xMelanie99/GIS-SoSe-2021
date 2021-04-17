@@ -341,6 +341,10 @@ a[href="https://www.washandart.de/"] {
     padding: 60px 0 50px 0;
 }
 
+.picturecontainer {
+    padding: 0 9%;
+}
+
 
 
 /*KONTAKT-SEITE*/
@@ -513,5 +517,7 @@ textarea {
           display:block;
       }
   }
+
+ 
 
       
