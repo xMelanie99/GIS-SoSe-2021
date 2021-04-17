@@ -118,7 +118,8 @@ div h2 {
 
 /*Folgeelement*/
 h3+b {
-    background-color:rgba(198, 235, 203, 0.521);
+    background-color:rgba(221, 236, 223, 0.521);
+
 }
 
  /* allg. Überschriften */
@@ -303,16 +304,14 @@ a[href="https://www.washandart.de/"] {
 
 /*BILDERUNTERSCHRIFT-TEXT*/
 .p {
+    position:relative;
     text-align: center;
-
-
+    width: 208px;
 }
 
 /*einzelne BILDER */
 .pic-style {                                                  
     border-radius: 50%;
-
-
     border: 5px solid #aeccaead;
     box-shadow: 2px 2px 2px 2px rgba(61, 60, 60, 0.138);
 } 
@@ -347,10 +346,9 @@ a[href="https://www.washandart.de/"] {
 
 /*Pseudo-Test*/
 span::before {
-    content: "-";
+    content: ":)";
     width: 55px;
     height: 15px;
-    display: inline-block;
 }
 
 /*Überschriften*/
@@ -362,6 +360,7 @@ span::before {
 .kontakt-box1 {
     font-size: medium;  
     display: flex;
+    height: 300px;
 }
 
 .kontakt-box {
