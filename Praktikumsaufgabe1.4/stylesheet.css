@@ -1,10 +1,7 @@
-  
-
 body {
     background-image: url("CSS-pictures/bg.png");
     font-family: sans-serif;
     font-size: 1.2em;
-    width: 800px;
     margin: auto;
     border-style: solid;
     border-width: 1px;
@@ -13,32 +10,48 @@ body {
     color:#616461
 }
 
-@media screen and (max-width: 600px) {
-    body {
- 
-        margin:auto;
-    }
-  }
+.grid-layout {
+    display: grid;
+    grid-template-areas: ". nav ."  ". main ." ". footer .";
+    grid-template-rows: auto 1fr auto; 
+    grid-template-columns: 15% auto 15%;
+}
 
+nav {
+    grid-area: nav;
+}
 
 main {
-    width: 800px;
+    grid-area: main;
     height: auto;
     margin: auto;
     background-color: rgb(245, 255, 245);
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.205);
 }
 
+
+
 footer {
-    width: 800px;
+    background-color: rgba(57, 70, 53, 0.932);
+    grid-row: 3 span;
+    grid-area: footer;
+    width: 100%;
     height: auto;
     margin: auto;
 }
 
-
-
 strong {
     padding: 10px;
+}
+#burgermenu {
+    display:none;
+}
+
+#burgermenu div {
+width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
 }
 
 /*NAVIGATION*/
@@ -48,16 +61,11 @@ strong {
     padding: 20px 2px 20px 10px;
     margin-left: auto;
     text-align: right;
-    opacity: 95%;
-
-    background-color: #aeccae;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.322);
 }
 
 /*Maus-HOVER*/
 #navcontent a:hover {                                           
-    padding: 10px 0px 10px 0px;
-    border-radius: 40%;
+    padding: 20px 0px 20px 0px;
 
     background-color:rgba(147, 161, 147, 0.603);
 } 
@@ -65,8 +73,8 @@ strong {
 /*aktive Seite*/
 .activenav {                                                    
     box-shadow: 2px 2px 2px 2px rgba(61, 60, 60, 0.13);  
-    border-radius: 40%;
-    padding: 10px 0px 10px 0px;
+
+    padding: 20px 0px 20px 0px;
     text-decoration: none;
         
     color: white;
@@ -84,9 +92,12 @@ strong {
 } 
 
  /*fixierte Navigation*/
-nav {                                                          
+nav {  
+    background-color: #aeccae;                                                        
     position: sticky;
     top: 0;
+    transition: all .5s ease-in;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.322);
 }
 
  /*Obere Abstand*/
@@ -112,7 +123,7 @@ h3+b {
  /* allg. Überschriften */
 h1, h2 {
     display: flex;
-    height: 150px;
+    height: 100px;
     justify-content: center;
     align-items: center; 
 }
@@ -142,12 +153,18 @@ h1, h2 {
     float: left;
     padding: 50px;
     box-sizing: border-box;
-    width: 400px; 
+    width: 50%;
     height: 200px; 
 
-    background-color: rgba(57, 70, 53, 0.932);
+    
     color:rgba(201, 198, 198, 0.952);
 } 
+
+.box h4 {
+    font-size: 16px;
+    margin-top: 0px;
+}
+
 .kontakt {
     margin: 5px;
 }
@@ -196,8 +213,8 @@ h1, h2 {
 
 /*Geschwister*/
 div ~ table {
-    color:rgb(141, 182, 180);
-    font-size: 30px;
+    color:rgb(54, 124, 81);
+    font-size: 17-px;
 }
 
 /*ZITAT*/
@@ -219,7 +236,7 @@ div ~ table {
 
 /*TABELLE*/
 #table-steckbrief td{                                          
-    padding: 20px 50px 20px 50px;
+    padding: 10px 10px 10px 10px;
     text-align: center;
     border: 2px solid #aeccaea6;
     background-color:rgba(230, 245, 230, 0.5);
@@ -453,3 +470,32 @@ textarea {
     animation-iteration-count:infinite;
 }
 
+@media screen and (max-width: 600px) {
+    .grid-layout {
+        grid-template-areas: "nav" "main" "footer";
+        grid-template-columns: auto;
+
+    }
+    .box {
+        padding: 20px;
+    }
+    .box2 {
+        padding: 5px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+      #navcontent {
+          display: none;
+      }
+      #burgermenu {
+        display: block;
+        height: 100%;
+        justify-content: center;
+        padding: 0.7rem 0 ;
+        width: 35px;
+        margin: 0 auto;
+      }
+  }
+
+      
