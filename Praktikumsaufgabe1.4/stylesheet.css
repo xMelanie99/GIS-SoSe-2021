@@ -484,11 +484,19 @@ textarea {
 }
 
 /* Desktop */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
     .grid-layout {
         grid-template-columns: 22% auto 22%;
     }
 }
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .grid-layout {
+        grid-template-areas: "nav" "main" "footer";
+        grid-template-columns: auto;
+    }
+}
+
 
 /* Smartphone */
 @media screen and (max-width: 600px) {
