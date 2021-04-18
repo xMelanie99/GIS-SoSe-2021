@@ -292,29 +292,28 @@ a[href="https://www.washandart.de/"] {
     color: rgb(211, 58, 211);
 }
 
-.pictures {
-    width: auto;
-}
 
-/*BILDERUNTERSCHRIFT*/
-.picture-text  {
-    flex-direction: row;
+.container {
+    justify-content: center;
     display: flex;
-}
-
-/*BILDERUNTERSCHRIFT-TEXT*/
-.p {
-    position:relative;
-    text-align: center;
-    width: 208px;
+    max-width: 780px;
+    flex-wrap: wrap;
+    margin: auto;
 }
 
 /*einzelne BILDER */
-.pic-style {                                                  
+.pic-style { 
+    justify-items: center;                                               
     border-radius: 50%;
     border: 5px solid #aeccaead;
     box-shadow: 2px 2px 2px 2px rgba(61, 60, 60, 0.138);
 } 
+
+/*BILDERUNTERSCHRIFT-TEXT*/
+.p {
+    justify-content: center;
+    width: 208px;
+}
 
 /*Instagram style*/
 .link {                                                    
@@ -358,18 +357,21 @@ span::before {
 
 /*Haupttext*/
 .kontakt-box1 {
-    font-size: medium;  
     display: flex;
-    height: 300px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+ 
 }
 
 .kontakt-box {
+    display: inline-block;
     font-size: medium;                                                   
     text-align: center;
-    width: 100%;
     box-sizing: border-box;
-    height: 250px;
-    margin-left: 50px;;
+    height: auto;
+    width: 300px;
+    padding: 50px;
 
     background-color: rgb(245, 255, 245);
 }
@@ -408,7 +410,7 @@ input {
 /*Nachrichtfeld*/
 #subject {
     height: 100px;
-    width: 400px;
+    width: 90%;
 }
 
 /* Datenschutz*/
@@ -481,11 +483,19 @@ textarea {
     animation-iteration-count:infinite;
 }
 
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    .grid-layout {
+        grid-template-columns: 22% auto 22%;
+    }
+}
+
+/* Smartphone */
 @media screen and (max-width: 600px) {
+    
     .grid-layout {
         grid-template-areas: "nav" "main" "footer";
         grid-template-columns: auto;
-
     }
     .box {
         padding: 20px;
@@ -495,9 +505,10 @@ textarea {
     }
   }
 
-  @media screen and (max-width: 400px) {
-      #navcontent {
-          display: none;
+  /* kleines Smartphone */
+@media screen and (max-width: 400px) {
+    #navcontent {
+        display: none;
       }
       #burgermenu {
         display: block;
@@ -509,7 +520,7 @@ textarea {
       #burgerclick:checked+.dropdown {
           display:block;
       }
-  }
+}
 
 #ImpressSM {
     margin-top: 0px;
