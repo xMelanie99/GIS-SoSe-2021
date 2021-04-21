@@ -8,6 +8,7 @@ function a1(): void {   // zulässige Variabeln (global)
 
 a1(); //Funktion wird aufgerufen
 
+
 function funktion1(): void { // zulässige Variabeln (lokal)
     console.log("Klar?");
 }
