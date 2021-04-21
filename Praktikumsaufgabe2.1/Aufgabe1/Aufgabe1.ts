@@ -17,15 +17,15 @@ function funktion1(): void { // zulässige Variabeln (lokal)
 // Hier sind alle Variable Namen zulässig, weil der Buchstabe klein geschrieben wurde. Im allg.: Sollen keine Ziffern am Anfang dafür verwendet werden. Auch keine Großbuchstaben am Anfang, allerdings kann man Bspw. schreiben: "beispielTest". Es sollen außerdem Schlüssel Worte vermieden werden. "_" & "$" dürfen verwendet werden 
 
 //c
-function a2(): void {
+function b2(): void {
     let b: string = "Alles Gute!";
     console.log(b);
-    funktion2();
+    func2();
     console.log("Alles Logo!");
 }
 
-a2();
+b2();
 
-function funktion2(): void {
+function func2(): void {
     console.log("Alles Klar?");
 }

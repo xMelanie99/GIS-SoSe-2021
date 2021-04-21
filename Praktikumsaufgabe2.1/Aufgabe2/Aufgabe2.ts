@@ -1,4 +1,4 @@
-function a2(): void {
+function c2(): void {
     let i: number = 9;
 
     do {
@@ -7,6 +7,6 @@ function a2(): void {
     } while ( i > 0); // wird solange angewendet bis i > 0, wenn dies eintritt stoppt das Programm
 }
 
-a2(); // Funktion wird aufgerufen
+c2(); // Funktion wird aufgerufen
 
 // Ausgabe: 9 8 7 6 5 4 3 2 1  

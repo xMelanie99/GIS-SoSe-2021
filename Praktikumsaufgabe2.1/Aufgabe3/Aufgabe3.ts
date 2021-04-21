@@ -1,12 +1,12 @@
 //A1
-function a1(): void {
+function g1(): void {
     let a: string = "Alles"; 
     console.log(a);
     funktion1(); 
     console.log("Logo!"); 
 }
 
-a1();
+g1();
 
 function funktion2(): void {
     console.log("Klar?");
@@ -17,7 +17,7 @@ function funktion2(): void {
     console.log("Alles Klar?");
 }
 
-function a2(): number {
+function d2(): number {
     let i: number = 9;
 
 
@@ -27,25 +27,25 @@ function a2(): number {
     } while ( i > 0);
 }
 
-a2();
+d2();
 
 // Fehlerfinden für Han :3
 
-function b1(): void {
+function e1(): void {
     let i: string = "Alles";
     console.log(j);
     fun1();
     console.log("Logo!");
 }
 
-b1();
+e1();
 
 function fun1(): void {
     console.log("Klar?");
 }
 
 //Code von A2
-function b2(): void {
+function f2(): void {
     let i: number = 9;
 
     do {
@@ -54,6 +54,6 @@ function b2(): void {
     } while ( i > 0):
 }
 
-b2();
+f2();
 
 // Fehler finden für mich
