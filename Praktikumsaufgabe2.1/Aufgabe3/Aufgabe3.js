@@ -1,12 +1,12 @@
 "use strict";
 //A1
-function c1() {
+function g1() {
     let a = "Alles";
     console.log(a);
     funktion1();
     console.log("Logo!");
 }
-c1();
+g1();
 function funktion2() {
     console.log("Klar?");
 }
@@ -23,7 +23,7 @@ function d2() {
 }
 d2();
 // Fehlerfinden für Han :3
-function be1() {
+function e1() {
     let i = "Alles";
     console.log(j);
     fun1();
