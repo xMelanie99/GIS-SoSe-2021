@@ -3,7 +3,7 @@
 function hash() {
     let zeile = "";
     for (let i = 0; i < 7; i++) {
-        zeile += "#";
+        zeile += "#"; // leerem String wird ein has hinzugefügt
         console.log(zeile);
     }
 }
@@ -41,4 +41,59 @@ function buzzfizz2() {
     }
 }
 buzzfizz2();
+//d
+console.log(chessboard());
+function chessboard() {
+    let hashpattern = "";
+    for (let zeile = 0; zeile < 8; zeile++) {
+        for (let spalte = 0; spalte < 8; spalte++) {
+            if (zeile % 2 == 0) { // gerade
+                if (spalte % 2 == 0) { // gerade und ungerade mit Zeichen
+                    hashpattern += " ";
+                    continue;
+                }
+                hashpattern += "#";
+                continue;
+            }
+            else if (zeile % 2 == 1) { //ungerade
+                if (spalte % 2 == 1) { // gerade und ungerade mit Zeichen
+                    hashpattern += " ";
+                    continue;
+                }
+                hashpattern += "#";
+                continue;
+            }
+        }
+        hashpattern += "\n";
+    }
+    return hashpattern;
+}
+chessboard();
+//e
+console.log(chessboard2(4, 6));
+function chessboard2(height, width) {
+    let hashpattern = "";
+    for (let zeile = 0; zeile < width; zeile++) {
+        for (let spalte = 0; spalte < height; spalte++) {
+            if (zeile % 2 == 0) { // gerade
+                if (spalte % 2 == 0) { // gerade und ungerade mit Zeichen
+                    hashpattern += " ";
+                    continue;
+                }
+                hashpattern += "#";
+                continue;
+            }
+            else if (zeile % 2 == 1) { //ungerade
+                if (spalte % 2 == 1) { // gerade und ungerade mit Zeichen
+                    hashpattern += " ";
+                    continue;
+                }
+                hashpattern += "#";
+                continue;
+            }
+        }
+        hashpattern += "\n";
+    }
+    return hashpattern;
+}
 //# sourceMappingURL=Aufgabe6.js.map
