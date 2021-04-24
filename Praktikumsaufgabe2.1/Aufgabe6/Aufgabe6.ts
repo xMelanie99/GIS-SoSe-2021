@@ -40,3 +40,27 @@ function buzzfizz2(): void {
 }
 
 buzzfizz2();
+
+//d
+
+
+function chessboard(): string {
+    let hashpattern: string = "";
+
+    for (let i: number = 0; i < 8; i++) {
+        for (let j: number = 0; j < 8; j++) {
+            if (i % 2 == 0) {
+                if (j % 2 == 0) {
+                    hashpattern += " ";
+                    continue;
+                }
+                hashpattern += "#";
+                console.log(hashpattern);
+            }
+        }
+    }
+    return hashpattern;
+    
+}
+
+chessboard ();
