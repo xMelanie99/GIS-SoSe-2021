@@ -12,9 +12,9 @@ hash();
 //b
 function buzzfizz(): void {
     for (let i: number = 0; i <= 100; i++) {
-        if (i % 3 == 0) {
+        if (i % 3 == 0) { // bei durch 3 teilbaren zahlen
             console.log("Fizz");
-        } else if (i % 5 == 0) {
+        } else if (i % 5 == 0) { // bei durch 5 teilbaren zahlen
             console.log("Buzz");
         } else {
             console.log(i);
@@ -28,7 +28,7 @@ buzzfizz();
 function buzzfizz2(): void {
     for (let i: number = 1; i <= 100; i++) {
         if (i % 3 == 0 && i % 5 == 0) {
-            console.log("FizzBuzz");
+            console.log("FizzBuzz"); // bei durch 3 und 5 teilbaren zahlen
         } else if (i % 3 == 0) {
             console.log("Fizz");
         } else if (i % 5 == 0) {

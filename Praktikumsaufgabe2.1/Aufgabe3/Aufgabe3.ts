@@ -29,7 +29,7 @@ function d2(): number {
 
 d2();
 
-// Fehlerfinden für Han :3
+// Fehlerfinden für Han und Monika :3
 
 function e1(): void {
     let i: string = "Alles";
