@@ -3,8 +3,8 @@
 let a = 4;
 let b = 5;
 function multiply(a, b) {
-    let result = a * b;
-    console.log(result);
+    let result = a * b; // Ergnis ist a und b multipliziert
+    console.log(result); //Ausgabe des Ergebnis
     return result;
 }
 multiply(a, b);
@@ -12,11 +12,11 @@ multiply(a, b);
 let smaller = -1;
 let bigger = -12;
 function max(smaller, bigger) {
-    if (smaller < bigger) {
+    if (smaller < bigger) { // wenn die zahl kleiner ist soll die größere Zahl ausgegeben werden
         console.log(bigger);
         return bigger;
     }
-    else {
+    else { // wenn die zahl größer ist wird diese ausgegeben
         console.log(smaller);
         return smaller;
     }
@@ -24,17 +24,17 @@ function max(smaller, bigger) {
 max(smaller, bigger);
 //C
 function counter() {
-    let k = 1;
+    let k = 1; // Zahlen ab 1
     let i = 0;
     while (k <= 100) {
-        i += k;
-        k++;
+        i += k; // addierung aller Zahlen
+        k++; // addiert auf
     }
     return i;
 }
 console.log(counter());
 //d
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) { // i < 10 = 10 random zahlen
     console.log(Math.floor(Math.random() * 100)); //Math.floor für ganzzahlige Zahlen
 }
 //e
