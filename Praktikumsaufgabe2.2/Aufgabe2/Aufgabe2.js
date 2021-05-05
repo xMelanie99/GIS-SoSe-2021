@@ -9,16 +9,15 @@ function backwards(_ary) {
 }
 console.log(backwards([1, 3, 5, 7, 9]));
 //b
-let aryOne = [1, 2, 3];
-let aryTwo = [4, 5, 6];
-aryOne = join(aryOne, aryTwo);
 function join(_one, _two) {
-    for (let i = 0; i < _one.length; i++) {
-        aryOne.push(_one[i]);
+    let empty = []; //zwischenspeicher
+    for (let i = 0; i < _two.length; i++) { //Die Länge des zweites Arrays wird verwendet um diesen dann später an den ersten dranzuhängen
+        empty = _one; //Übergabe eines beliebigen Wertes (erster Array) für den Zwischenspeicher
+        empty.push(_two[i]); //Zweites Array wird hinter den ersten Array hinz.
     }
-    return aryOne;
+    return empty;
 }
-console.log(aryOne);
+console.log(join([1, -2, 3, 788], [22, 33, 415454, 55]));
 //c
 function split(_oneAry, _idx1, _idx2) {
     let aryEmpty = [];
