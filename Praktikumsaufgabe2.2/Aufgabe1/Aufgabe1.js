@@ -1,16 +1,15 @@
 "use strict";
 //a
-let minAry = [1, 4, 5, 26, 7, -12];
-function min(_a) {
-    let save = _a[0];
+function min(..._a) {
+    let remain = _a[0];
     for (let i = 0; i < _a.length; i++) {
-        if (_a[i] < save) {
-            save = _a[i];
+        if (_a[i] < remain) {
+            remain = _a[i];
         }
     }
-    return save;
+    return remain;
 }
-console.log(min(minAry));
+console.log(min(1, 2, 3));
 //b 
 function isEven(_zahl) {
     if (_zahl == 0) {
@@ -24,7 +23,7 @@ function isEven(_zahl) {
         return isEven(_zahl);
     }
 }
-console.log(isEven(-1)); //StackOverflow
+console.log(isEven(5)); //StackOverflow
 let p1 = { name: "Han", kurs: "MIB", matr: 123456 };
 let p2 = { name: "Jochem", kurs: "MIB", matr: 789012 };
 let p3 = { name: "Gustav", kurs: "LOST", matr: 135790 };

@@ -14,8 +14,8 @@ let aryOne: number [] = [1, 2, 3];
 let aryTwo: number [] = [4, 5, 6];
 aryOne = join(aryOne, aryTwo);
 function join(_one: number[], _two: number[]): number[] { 
-    for (let i: number = 0; i < 1; i++) { // mit i < 1 wird der array nur einmal dran gehangen
-        aryOne.push(4, 5, 6); //2. Array wird hinten dran gesetzt
+    for (let i: number = 0; i < _one.length; i++) { 
+        aryOne.push(_one[i]); 
     }
     return aryOne;
 }

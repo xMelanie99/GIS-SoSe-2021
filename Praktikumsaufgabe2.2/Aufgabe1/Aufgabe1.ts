@@ -1,15 +1,14 @@
 //a
-let minAry: number[] = [1, 4, 5, 26, 7, -12];
-function min(_a: number[]): number {
-    let save: number = _a[0];
+function min(..._a: number []): number { //Rest Parameter (...output) alle Variabeln werden in ein Array gespeichert
+    let remain: number = _a[0];
     for (let i: number = 0; i < _a.length; i++) {
-        if (_a[i] < save) {
-            save = _a[i];
+        if (_a[i] < remain) {
+            remain = _a[i];
         }
     }
-    return save;
+    return remain;
 }
-console.log(min(minAry));
+console.log(min(1, 2, 3));
 
 //b 
 function isEven(_zahl: number): boolean {
@@ -22,7 +21,7 @@ function isEven(_zahl: number): boolean {
         return isEven(_zahl);
     }
 }
-console.log(isEven(-1)); //StackOverflow
+console.log(isEven(5)); //StackOverflow
 
 //c
 interface Studi {
