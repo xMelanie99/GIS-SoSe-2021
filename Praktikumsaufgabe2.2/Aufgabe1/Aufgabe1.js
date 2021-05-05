@@ -18,12 +18,16 @@ function isEven(_zahl) {
     else if (_zahl == 1) {
         return false;
     }
-    else {
+    else if (_zahl > 0) {
         _zahl -= 2;
         return isEven(_zahl);
     }
+    else {
+        _zahl += +2;
+        return isEven(_zahl);
+    }
 }
-console.log(isEven(5)); //StackOverflow
+console.log(isEven(-2)); //StackOverflow bei negativen Werten
 let p1 = { name: "Han", kurs: "MIB", matr: 123456 };
 let p2 = { name: "Jochem", kurs: "MIB", matr: 789012 };
 let p3 = { name: "Gustav", kurs: "LOST", matr: 135790 };

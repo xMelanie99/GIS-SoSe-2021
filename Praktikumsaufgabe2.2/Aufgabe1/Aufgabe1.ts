@@ -16,12 +16,15 @@ function isEven(_zahl: number): boolean {
         return true;
     } else if (_zahl == 1) {
         return false;
-    } else {
+    } else if (_zahl > 0) {
         _zahl -= 2;
+        return isEven(_zahl);
+    } else {
+        _zahl += +2;
         return isEven(_zahl);
     }
 }
-console.log(isEven(5)); //StackOverflow
+console.log(isEven(-2)); //StackOverflow bei negativen Werten
 
 //c
 interface Studi {
