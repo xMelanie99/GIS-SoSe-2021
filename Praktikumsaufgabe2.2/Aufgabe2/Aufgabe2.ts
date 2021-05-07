@@ -12,13 +12,16 @@ console.log(backwards([1, 3, 5, 7, 9]));
 //b
 function join(_one: number[], _two: number[]): number[] { 
     let empty: number [] = []; //zwischenspeicher
-    for (let i: number = 0; i < _two.length; i++) { //Die Länge des zweites Arrays wird verwendet um diesen dann später an den ersten dranzuhängen
-        empty = _one; //Übergabe eines beliebigen Wertes (erster Array) für den Zwischenspeicher
-        empty.push(_two[i]); //Zweites Array wird hinter den ersten Array hinz.
+    for (let i: number = 0; i < _one.length; i++) {
+        empty.push(_one[i]);
+    }
+    for (let i: number = 0; i < _two.length; i++) { //Die Länge des zweites Arrays wird verwendet um diesen dann später an den ersten dranzuhängen //Übergabe eines beliebigen Wertes (erster Array) für den Zwischenspeicher
+        empty.push(_two[i]);
     }
     return empty;
 }
 console.log(join([1 , -2, 3, 788], [22, 33, 415454, 55]));
+ 
 
 //c
 function split(_oneAry: number[], _idx1: number, _idx2: number): number[] {
