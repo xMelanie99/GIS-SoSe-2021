@@ -1,0 +1,53 @@
+body {
+    font-family:"Courier New", Courier, monospace;
+}
+
+h1 {
+    width: 1000px;
+    font-size: 75px;
+    margin: 0 auto;
+    text-align: center;
+    color: gray;
+    font-weight: 100;
+}
+
+h2 {
+    
+    font-size: 50px;
+    font-weight: 2000;    
+}
+
+#flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin: 100px auto;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 35px;
+    text-align: center;
+    border: 1px solid gray;
+    cursor:pointer;
+}
+
+.name:hover {
+    background-color:lightgray;
+}
+
+#bild1 {
+    background-color: pink;
+    border: 1px solid gray;
+}
+
+#next {
+    width: 100px; 
+    font-size: 35px;
+    margin: 0 auto;
+}
+
+.center {
+    width: 100px;
+    margin: 0 auto;
+}
