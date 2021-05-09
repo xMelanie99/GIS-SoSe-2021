@@ -30,7 +30,7 @@ namespace Charakter {
     let allHat: Hat[] = [];
     let allPants: Pants[] = [];
     let storeSkin: Skin;
-    let storage: Storage = {skin: undefined, hat: undefined, pants: undefined};
+    let storage: Storage = { skin: undefined, hat: undefined, pants: undefined };
 
 
     readData();
@@ -78,30 +78,29 @@ namespace Charakter {
             optName.setAttribute("class", "name");
             optName.appendChild(document.createTextNode(allSkin[i].name)); // text wurde eingefügt in optName
             divOpt.appendChild(optName);
-            // optName.setAttribute("id", i.toString()); 
         }
     }
 
     function selectOpt(_event: Event): void {
-        let currentOpt: HTMLParagraphElement = <HTMLParagraphElement> _event.target;
-        console.log("allo");
+        let currentOpt: HTMLParagraphElement = <HTMLParagraphElement>_event.target; // currentOpt = Textelement, dass angeklickt wird
+        // console.log("allo"); // Test für die Klicks
         for (let i: number = 0; i < allSkin.length; i++) {
             document.getElementById(i.toString()).querySelector("img").setAttribute("style", "background-color:" + allSkin[i].name + ";border: 1px solid gray;"); // bei jeder Option wird der Rand zurückgesetzt
         }
-        let parentOpt: HTMLDivElement = <HTMLDivElement> currentOpt.parentElement;
-        parentOpt.querySelector("img").style.border = "7px solid black";
-        storeSkin = allSkin[Number(parentOpt.id)];
+        let parentOpt: HTMLDivElement = <HTMLDivElement>currentOpt.parentElement; // parentOpt = "parent" von dem Text (div)
+        parentOpt.querySelector("img").style.border = "7px solid black"; // Macht bei der Auswahl einen Border um das Bild
+        storeSkin = allSkin[Number(parentOpt.id)]; // Number = macht parentOpt.id zu einem Typ number
     }
 
     for (let i: number = 0; i < allSkin.length; i++) {
-        document.getElementById(i.toString()).querySelector(".name").addEventListener("click", selectOpt);
+        document.getElementById(i.toString()).querySelector(".name").addEventListener("click", selectOpt); // Fügt Event Listener zu jeder Auswahlmöglichkeit hinzu
     }
 
     function nextOption(): void {
         console.log(storeSkin);
-        storage.skin = storeSkin;
+        storage.skin = storeSkin; // speichert die Auswahl in der storage variable
         console.log(storage);
     }
 
-    document.querySelector("#next").addEventListener("click", nextOption);
+    document.querySelector("#next").addEventListener("click", nextOption); //führt das Element, beim klicken, mit der id next die nextOption Funktion aus
 }
