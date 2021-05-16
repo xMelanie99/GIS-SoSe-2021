@@ -1,13 +1,13 @@
 body {
     background-image: url("CSS-pictures/bg.png");
-    font-family: sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: lighter;
     font-size: 1.2em;
     margin: auto;
     border-style: solid;
     border-width: 1px;
-
     border-color: rgba(0, 0, 0, 0);
-    color:#616461
+    color:#6f6f6f
 }
 
 .grid-layout {
@@ -24,12 +24,12 @@ nav {
 main {
     grid-area: main;
     height: auto;
-    background-color: rgb(245, 255, 245);
+    background-color: rgb(241, 255, 255);
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.205);
 }
 
 footer {
-    background-color: rgba(57, 70, 53, 0.932);
+    background-color: rgba(57, 81, 97, 0.932);
     grid-row: 3 span;
     grid-area: footer;
     width: 100%;
@@ -38,7 +38,10 @@ footer {
 }
 
 strong {
-    padding: 8px;
+    font-weight: lighter;
+    color: rgba(146, 146, 146, 0.932);
+    padding-right: 40px;
+    padding-left: 40px;
 }
 #burgermenu {
     display:none;
@@ -47,7 +50,6 @@ strong {
 #burgermenu div {
     width: 35px;
     height: 5px;
-    background-color: black;
     margin: 6px 0;
 }
 
@@ -61,30 +63,27 @@ strong {
     display:none;
 }
 
-ul {
-    margin:0;
-    padding:0;
-}
 
 /*NAVIGATION*/
 #navcontent {
     position: relative;
-    right: 0;
-    padding: 20px 2px 20px 10px;
+    padding: 25px;
     margin-left: auto;
-    text-align: right;
+    text-align: center;
 }
 
 /*Maus-HOVER*/
 #navcontent a:hover {                                           
-    padding: 20px 0px 20px 0px;
-
-    background-color:rgba(147, 161, 147, 0.603);
+    padding: 26px 0px 26px 0px;
+    background-color:rgba(197, 228, 242, 0.398);
 } 
 
+#act {
+    padding: 26px 0px 26px 0px;
+    background-color:rgba(197, 228, 242, 0.145);
+}
 
- /*Link*/
-a.nav {                                                        
+a.nav {                                                    
     text-decoration: none;
 }
 
@@ -95,42 +94,26 @@ strong {
 
  /*fixierte Navigation*/
 nav {  
-    background-color: #aeccae;                                                        
+    background-color:  rgba(57, 81, 97, 0.932);                                                        
     position: sticky;
     top: 0;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.322);
 }
 
  /*Obere Abstand*/
-header {
-    background-color: rgb(245, 255, 245);                                                      
+header {                                                    
     margin-top: 20px;
-}
-
-/*Nachfahren*/
-div h1 {
-    color: rgba(64, 119, 58, 0.932);
-}
-
-div h2 {
-    color: #7dc789; 
-}
-
-/*Folgeelement*/
-h3+b {
-    background-color:rgba(221, 236, 223, 0.521);
-
 }
 
  /* allg. Überschriften */
 h1, h2 {
+    
+    font-family:Arial, Helvetica, sans-serif;
     display: flex;
     height: 100px;
     justify-content: center;
     align-items: center; 
 }
-
-
 
 /*TOP Sprung*/
 .zurück-top {  
@@ -139,13 +122,12 @@ h1, h2 {
     justify-content: center;
     align-items: center;                                                 
     text-decoration: none;
-
-    color: #aeccae;
+    color: rgba(57, 81, 97, 0.932);
 }
 
 /*Sprung HOVER*/
 .zurück-top:hover {                                             
-    color:rgb(115, 167, 115);
+    color:rgb(125, 167, 199);
 }
 
  /*footer-IMPRESSUM*/
@@ -157,9 +139,7 @@ h1, h2 {
     box-sizing: border-box;
     width: 50%;
     height: 200px; 
-
-    
-    color:rgba(201, 198, 198, 0.952);
+    color:rgba(255, 255, 255, 0.952);
 } 
 
 .box h5 {
@@ -191,21 +171,21 @@ h1, h2 {
 
 /*social media - HOVER*/
 .fa:hover {
-    color: rgb(115, 167, 115);
+    color: rgb(125, 167, 199);
   }
 
 .fa-instagram {
-    color: #aeccae;
+    color: rgb(125, 167, 199);
     text-align: center;
   }
 
 .fa-twitter {
-    color:#aeccae;
+    color:rgb(125, 167, 199);
     text-align: center;
   }
 
 .fa-facebook {
-    color:#aeccae;
+    color:rgb(125, 167, 199);
     text-align: center;
   }
 
@@ -213,13 +193,6 @@ h1, h2 {
 
 /*ÜBER MICH*/
 
-
-
-/*Geschwister*/
-div ~ table {
-    color:rgb(54, 124, 81);
-    font-size: 17-px;
-}
 
 /*ZITAT*/
 .zitat {                                                          
@@ -238,30 +211,17 @@ div ~ table {
     border-radius: 50%;
 }
 
-/*TABELLE*/
-#table-steckbrief td{                                          
-    padding: 10px 10px 10px 10px;
-    text-align: center;
-    border: 2px solid #aeccaea6;
-    background-color:rgba(230, 245, 230, 0.5);
-}
-
-/*TABELLE ZENTRIERUNG*/
-#table-steckbrief {                                             
-    margin: auto;
-    padding: 0 0 50px 0;
-    border: 5px solid transparent;
-}
-
-/*VIDEO ZENTRIERUNG*/
-.video {                                                        
+.gallery1 {
     display: block;
+    width: 198px; 
+    height: auto;
     margin: 0 auto;
+    padding: 25px;
 }
 
-/* TEXT unter dem Video*/
-.ramen-text {
+#text-me {
     text-align: center;
+    padding: 20px;
 }
 
  /*HFU-TEXT ZENTRIERUNG*/
@@ -274,38 +234,16 @@ div ~ table {
 
 /*PORTFOLIO-SEITE*/
 
-
-/*Attribute*/
-a[href="https://www.glg-freiburg.de/schularten/berufskollegs/bk-foto-medientechnik/"] {
-    color: rgb(0, 38, 255);
-}
-
-a[href="https://bilger-fotodesign.de/"] {
-    color: rgb(0, 255, 242);
-}
-
-a[href="https://www.die-oldtimer-galerie.de/de/"] {
-    color: rgb(146, 82, 104);
-}
-
-a[href="https://www.washandart.de/"] {
-    color: rgb(211, 58, 211);
-}
-
-
 .container {
-    justify-content: center;
     display: flex;
     max-width: 780px;
-    flex-wrap: wrap;
+    overflow: auto;
     margin: auto;
 }
 
 /*einzelne BILDER */
 .pic-style { 
-    justify-items: center;                                               
-    border-radius: 50%;
-    border: 5px solid #aeccaead;
+    margin: 5px;                                          
     box-shadow: 2px 2px 2px 2px rgba(61, 60, 60, 0.138);
 } 
 
@@ -373,7 +311,7 @@ span::before {
     width: 300px;
     padding: 50px;
 
-    background-color: rgb(245, 255, 245);
+    background-color: rgb(241, 255, 255);
 }
 
 /*social media Text*/
@@ -401,7 +339,7 @@ span::before {
 
 /*Kontaktfelder*/
 input {
-    font-family: sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     background-color: rgb(255, 255, 255);
     height: 30px;
     border: 1px solid grey;
@@ -426,7 +364,7 @@ input {
 
 /*Schriftart im Nachrichtfeld*/
 textarea {
-    font-family: sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 /*senden Button*/
@@ -530,6 +468,9 @@ textarea {
       }
       #burgerclick:checked+.dropdown {
           display:block;
+      }
+      .pic-style{
+          margin: 0 auto;
       }
 }
 
