@@ -23,6 +23,7 @@ namespace Charakter {
             selectedImg.src = "Bilder/Placeholder.png";
             selectedImg.setAttribute("style", "margin: 10px");
             selectedImg.setAttribute("class", "currentSelection");
+            selectedImg.setAttribute("id", i.toString() + "preview");
             selectedImg.width = 100;
             document.getElementById("storage").appendChild(selectedImg);
         }
@@ -82,6 +83,8 @@ namespace Charakter {
         parentOpt.querySelector("img").style.border = "7px solid gray"; // Macht bei der Auswahl einen Border um das Bild
 
 
+        let currentPagePreview: HTMLImageElement = <HTMLImageElement>document.getElementById(pageIndex.toString() + "preview"); // die Box, die gefüllt werden soll, wird gesucht preview=die unteren Bilder
+        currentPagePreview.src = currentPage.options[Number(currentOpt.parentElement.id)].pic;
     }
 
     document.querySelector("#next").addEventListener("click", nextOption); //führt das Element, beim klicken, mit der id next die nextOption Funktion aus
@@ -93,21 +96,80 @@ namespace Charakter {
             return;
         }
 
-        localStorage.setItem("storage", JSON.stringify(storage));
+        localStorage.setItem("storage", JSON.stringify(storage)); // Speicherdaten werden in localStorage gespeichert
         console.log(localStorage.getItem("storage"));
 
         pageIndex++;
 
-        if (pages.length <= pageIndex) {
-            console.log("Local Storage: " + localStorage.getItem("storage"));
-
-            return;
-        }
-
         document.getElementById("flexbox").innerHTML = ""; // alles was in der Flexbox drin ist, wird gelöscht
         document.getElementById("title").innerHTML = ""; //  alles was iim title drin ist, wird gelöscht
 
+
+        if (pages.length <= pageIndex) {
+            console.log("Local Storage: " + localStorage.getItem("storage"));
+
+            document.getElementById("preview").innerHTML = "";
+            document.querySelector(".center").innerHTML = "";
+            showGeneralView();
+            return;
+        }
+
         loadOptions();
+    }
+
+    function showGeneralView(): void {
+        document.getElementById("title").appendChild(document.createTextNode("You are almost done!")); // erstellt einen neuen Titel
+
+        let flexbox: HTMLElement = <HTMLElement> document.getElementById("flexbox"); //neue flexbox
+        flexbox.style.width = 250 + "px";
+        flexbox.style.height = 348.99 + "px";
+        flexbox.style.backgroundColor = "white";
+
+        for (let i: number = 0; i < pages.length; i++) { //geht die auswahlmöglichkeiten durch
+            let image: HTMLImageElement = <HTMLImageElement> document.createElement("img"); //neues Image 
+            let storage: Storage = JSON.parse(localStorage.getItem("storage")); // JSON wird konvertiert in storage
+
+            image.src = storage[pages[i].storageLocation].pic; // img.src wird überschrieben
+            image.style.position = "absolute";
+            flexbox.appendChild(image); // Neuer Ast im Baum
+        }
+
+        let inputName: HTMLInputElement = <HTMLInputElement> document.createElement("input"); // Textfeld erstellt
+        inputName.style.width = 250 + "px";
+        inputName.id = "inputName"; // id heißt inputName
+        inputName.placeholder = "input name...";
+        document.getElementById("inputDiv").appendChild(inputName);
+        
+
+        let resetButton: HTMLButtonElement = <HTMLButtonElement> document.createElement("button"); // neu ertsellter Button
+        resetButton.innerHTML = "reset all"; // neuer Text im Button
+        resetButton.addEventListener("click", function (): void { window.location.reload(); });  // beim klick wird die Seite refresht
+        document.getElementById("btn").appendChild(resetButton);
+
+        resetButton.style.width = 100 + "px";
+        resetButton.style.height = 28.19 + "px";
+
+
+        let doneButton: HTMLButtonElement = <HTMLButtonElement> document.createElement("button");
+        doneButton.innerHTML = "done";
+        doneButton.addEventListener("click", showFinalResult);
+        document.getElementById("btn").appendChild(doneButton);
+
+        doneButton.style.width = 100 + "px";
+        doneButton.style.height = 28.19 + "px";
+        
+        function showFinalResult(): void {
+            let name: string = inputName.value; // neue Variable mit dem Wert vom Input in einen String
+            let saveTitle: HTMLHeadingElement = <HTMLHeadingElement> document.getElementById("title");
+
+            if (saveTitle.hasChildNodes()) { //hasChildNode = sicherstellen dass es einen Kind Element gibt, bevor es gelöscht wird
+                saveTitle.removeChild(saveTitle.firstChild); //das erste Kind im heading Element wird gelöscht
+            }
+            saveTitle.appendChild(document.createTextNode(name)); //neuer Ast im Baum, mit dem gewünschten Namen
+            document.getElementById("btn").removeChild(doneButton); // entfert den "done" Button
+            document.getElementById("inputDiv").removeChild(inputName); //entfernt das inout Feld
+        }
+
     }
 
 

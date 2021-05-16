@@ -20,6 +20,13 @@ body {
 #selects {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+#btn{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
 }
 
 #storage {
@@ -49,7 +56,18 @@ h2 {
     width: 1000px;
     margin: 100px auto;
     justify-content: space-around;
+    margin-bottom: 25px;
 
+}
+
+#inputDiv {
+    margin-bottom: 10px;
+}
+
+#inputName {
+    font-size: 15px;
+    color: gray;
+    font-family: inherit;
 }
 
 .name {
