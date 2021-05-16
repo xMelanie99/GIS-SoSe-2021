@@ -3,7 +3,26 @@ body {
     font-family:"Courier New", Courier, monospace;
 }
 
+#currSelection {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+
 #container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#selects {
+    display: flex;
+    flex-direction: column;
+}
+
+#storage {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,6 +49,7 @@ h2 {
     width: 1000px;
     margin: 100px auto;
     justify-content: space-around;
+
 }
 
 .name {
@@ -70,4 +90,8 @@ span {
 span::before {
     content: "Please choose an option!";
     color: red;
+}
+
+.currentSelection {
+    background-color: white;
 }
