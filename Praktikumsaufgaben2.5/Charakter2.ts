@@ -39,6 +39,8 @@ namespace Charakter {
             
     }
 
+    communicate("https://xmelanie99.github.io/GIS-SoSe-2021/Praktikumsaufgabe2.5/JSON.json");
+
     let pages: Page[] = [ // Datensatz für die Unterseiten
         { title: "Choose your skin", storageLocation: StorageLocation.SKIN, options: dataObj.allSkins },
         { title: "Choose your pattern", storageLocation: StorageLocation.PATTERN, options: dataObj.allPatterns },

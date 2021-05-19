@@ -13,6 +13,7 @@ var Charakter;
         let response = await fetch(_url);
         console.log("Response", response);
     }
+    communicate("https://xmelanie99.github.io/GIS-SoSe-2021/Praktikumsaufgabe2.5/JSON.json");
     let pages = [
         { title: "Choose your skin", storageLocation: StorageLocation.SKIN, options: dataObj.allSkins },
         { title: "Choose your pattern", storageLocation: StorageLocation.PATTERN, options: dataObj.allPatterns },
