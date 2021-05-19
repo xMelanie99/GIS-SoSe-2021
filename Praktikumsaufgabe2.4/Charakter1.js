@@ -5,6 +5,7 @@ var Charakter;
     json();
     function json() {
         dataObj = JSON.parse(Charakter.jsonAllData); // JSON wird konvertiert
+        console.log(Charakter.jsonAllData);
     }
     let pages = [
         { title: "Choose your skin", storageLocation: Charakter.StorageLocation.SKIN, options: dataObj.allSkins },

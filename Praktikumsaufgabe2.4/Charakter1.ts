@@ -4,6 +4,8 @@ namespace Charakter {
     json();
     function json(): void {
         dataObj = JSON.parse(jsonAllData); // JSON wird konvertiert
+        console.log(jsonAllData);
+        
     }
 
     let pages: Page[] = [ // Datensatz für die Unterseiten

@@ -1,0 +1,115 @@
+body {
+    background-image: url("Bilder/space.jpg");
+    font-family:"Courier New", Courier, monospace;
+}
+
+#currSelection {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#selects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btn{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+#storage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 75px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    font-weight: 100;
+}
+
+h2 {
+    color: white;
+    font-size: 50px;
+    font-weight: 2000;    
+}
+
+#flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: calc(100vw - 32px); /* die Weite der Scrollbar wird von der errechneten Bildschirmweite abgezogen, damit alles besser zentriert wird */
+    width: 1000px;
+    margin: 100px auto;
+    justify-content: space-around;
+    margin-bottom: 25px;
+
+}
+
+#inputDiv {
+    margin-bottom: 10px;
+}
+
+#inputName {
+    font-size: 15px;
+    color: gray;
+    font-family: inherit;
+}
+
+.name {
+    font-size: 35px;
+    text-align: center;
+    border: 1px solid gray;
+    cursor:pointer;
+    background-color: white;
+}
+
+.name:hover {
+    background-color:lightgray;
+}
+
+#bild1 {
+    background-color: pink;
+    border: 1px solid gray;
+}
+
+#next {
+    font-family:"Courier New", Courier, monospace;
+    width: 100px; 
+    font-size: 20px;
+
+}
+
+.center {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+span {
+    opacity: 0;
+}
+
+span::before {
+    content: "Please choose an option!";
+    color: red;
+}
+
+.currentSelection {
+    background-color: white;
+}
