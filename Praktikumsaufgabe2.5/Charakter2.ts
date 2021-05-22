@@ -41,7 +41,7 @@ namespace Charakter {
 
         allDataSelect();
     }
-    comuBrows("https://xmelanie99.github.io/GIS-SoSe-2021/Praktikumsaufgabe2.5/data.json");
+    comuBrows("https://xmelanie99.github.io/GIS-SoSe-2021/Praktikumsaufgabe2.5/data.json"); //URL zum JSON
 
     function allDataSelect(): void {
 
@@ -197,13 +197,13 @@ namespace Charakter {
             doneButton.style.width = 100 + "px";
             doneButton.style.height = 28.19 + "px";
 
-            interface Answer {
+            interface Answer { 
                 error: string;
                 message: string;
             }
 
             async function getResponse(): Promise<void> {
-                let url: string = "https://gis-communication.herokuapp.com/";
+                let url: string = "https://gis-communication.herokuapp.com/"; // URL von der Aufgabe
                 let query: URLSearchParams = new URLSearchParams(<any>storage);
                 url = url + "?" + query.toString();
                 let response: Response = await fetch(url);
@@ -247,4 +247,4 @@ namespace Charakter {
 
         }
     }
-}
+} // Zusammen mit Bao Han Nguyen gearbeitet.
