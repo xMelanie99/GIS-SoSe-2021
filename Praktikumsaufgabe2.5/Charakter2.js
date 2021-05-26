@@ -15,7 +15,7 @@ var Charakter;
         console.log(dataObj);
         allDataSelect();
     }
-    comuBrows("https://xmelanie99.github.io/GIS-SoSe-2021/Praktikumsaufgabe2.5/data.json");
+    comuBrows("https://xmelanie99.github.io/GIS-SoSe-2021/Praktikumsaufgabe2.5/data.json"); //URL zum JSON
     function allDataSelect() {
         let pages = [
             { title: "Choose your skin", storageLocation: StorageLocation.SKIN, options: dataObj.allSkins },
@@ -131,7 +131,7 @@ var Charakter;
             doneButton.style.width = 100 + "px";
             doneButton.style.height = 28.19 + "px";
             async function getResponse() {
-                let url = "https://gis-communication.herokuapp.com/";
+                let url = "https://gis-communication.herokuapp.com/"; // URL von der Aufgabe
                 let query = new URLSearchParams(storage);
                 url = url + "?" + query.toString();
                 let response = await fetch(url);
@@ -169,5 +169,5 @@ var Charakter;
             }
         }
     }
-})(Charakter || (Charakter = {}));
+})(Charakter || (Charakter = {})); // Zusammen mit Bao Han Nguyen gearbeitet.
 //# sourceMappingURL=Charakter2.js.map

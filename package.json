@@ -1,0 +1,21 @@
+{
+  "name": "gis-sose-2021",
+  "version": "1.0.0",
+  "description": "Hallo :)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xMelanie99/GIS-SoSe-2021.git"
+  },
+  "author": "Melanie Müller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xMelanie99/GIS-SoSe-2021/issues"
+  },
+  "homepage": "https://github.com/xMelanie99/GIS-SoSe-2021#readme"
+}
