@@ -4,7 +4,7 @@
   "description": "Hallo :)",
   "main": "index.js",
   "scripts": {
-    "start": "node .Praktikumsaufgabe3.1/server.js",
+    "start": "node ./Praktikumsaufgabe3.1/server.js",
     "test": "node TEST/test-skript.js"
   },
   "repository": {
