@@ -38,6 +38,3 @@ export namespace P_3_2Server { // export des namespace
         _response.end(); // ende/finish/aus
     }
 }
-
-
-//_response.setHeader("content-type", "application/json; charset=utf-8");

@@ -35,3 +35,5 @@ namespace Aufgabe3 {
         }
     }
 }
+
+// Zusammen mit Bao Han Nguyen gearbeitet.
