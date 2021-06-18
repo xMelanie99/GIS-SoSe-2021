@@ -29,4 +29,4 @@ namespace Aufgabe3_4 {
         let dataString: string = await response.text();
         output.innerText = dataString;
     }
-}
+} // Zusammen mit Han Nguyen gearbeitet
