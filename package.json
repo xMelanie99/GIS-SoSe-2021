@@ -4,8 +4,8 @@
   "description": "Hallo :)",
   "main": "index.js",
   "scripts": {
-    "start": "node ./Praktikumsuafgabe3.2/server.js",
-    "test": "node ./Praktikumsuafgabe3.2/server.js"
+    "start": "node ./Praktikumsaufgabe3.4/server.js",
+    "test": "node ./Praktikumsaufgabe3.4/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/xMelanie99/GIS-SoSe-2021#readme",
   "dependencies": {
-    "@types/node": "^15.6.1"
+    "@types/mongodb": "^3.6.18",
+    "@types/node": "^15.6.1",
+    "mongodb": "^3.6.9"
   }
 }

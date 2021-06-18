@@ -38,5 +38,4 @@ var P_3_2Server;
         _response.end(); // ende/finish/aus
     }
 })(P_3_2Server = exports.P_3_2Server || (exports.P_3_2Server = {}));
-//_response.setHeader("content-type", "application/json; charset=utf-8");
 //# sourceMappingURL=server.js.map

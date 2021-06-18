@@ -30,4 +30,5 @@ var Aufgabe3;
         }
     }
 })(Aufgabe3 || (Aufgabe3 = {}));
+// Zusammen mit Bao Han Nguyen gearbeitet.
 //# sourceMappingURL=skript1.js.map
