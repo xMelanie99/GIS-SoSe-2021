@@ -45,5 +45,5 @@ var Aufgabe3_4;
         mongoClient = new Mongo.MongoClient(_url, options); // mit dem Mongo Cliet wird auf die DB zugegriffen
         await mongoClient.connect(); // verbidnet den Mongo Client mit der Datenbank
     }
-})(Aufgabe3_4 = exports.Aufgabe3_4 || (exports.Aufgabe3_4 = {}));
+})(Aufgabe3_4 = exports.Aufgabe3_4 || (exports.Aufgabe3_4 = {})); // Zusammen mit Han Nguyen gearbeitet
 //# sourceMappingURL=server.js.map

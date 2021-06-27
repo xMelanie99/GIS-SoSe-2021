@@ -22,5 +22,5 @@ var Aufgabe3_4;
         let dataString = await response.text();
         output.innerText = dataString;
     }
-})(Aufgabe3_4 || (Aufgabe3_4 = {}));
+})(Aufgabe3_4 || (Aufgabe3_4 = {})); // Zusammen mit Han Nguyen gearbeitet
 //# sourceMappingURL=client.js.map
