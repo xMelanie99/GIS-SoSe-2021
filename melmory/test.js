@@ -2,7 +2,7 @@
 var Melmory;
 (function (Melmory) {
     var serverUrl = "https://memazing.herokuapp.com/";
-    var imageUrl = "https://github.com/xMelanie99/GIS-SoSe-2021/tree/main/melmory";
+    var imageUrl = "https://raw.githubusercontent.com/xMelanie99/GIS-SoSe-2021/main/melmory";
     request_picture();
     async function request_picture() {
         let response = await fetch(serverUrl);

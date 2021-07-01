@@ -2,10 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Melmory = void 0;
 const Http = require("http"); // * = man importiert alles von http als Http
+//import * as Mongo from "mongodb";
 /* import { ParsedUrlQuery } from "querystring";
 import * as url from "url"; */
 var Melmory;
 (function (Melmory) {
+    var imageUrl = "https://raw.githubusercontent.com/xMelanie99/GIS-SoSe-2021/main/melmory";
     let port = Number(process.env.PORT); // neue Variable vom typ number wird process.env.PORT überwiesen | Port des Serves (Heruko) wird in eine Variable abgespeichert  
     if (!port) // wenn der port nicht gesetzt ist..
         port = 8100; // ..setzt er den port auf 8100

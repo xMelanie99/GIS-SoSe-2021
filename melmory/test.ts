@@ -2,7 +2,7 @@ namespace Melmory {
 
 
     var serverUrl: string = "https://memazing.herokuapp.com/";
-    var imageUrl: string = "https://github.com/xMelanie99/GIS-SoSe-2021/tree/main/melmory";
+    var imageUrl: string = "https://raw.githubusercontent.com/xMelanie99/GIS-SoSe-2021/main/melmory";
 
     request_picture();
 

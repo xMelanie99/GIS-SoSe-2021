@@ -1,8 +1,13 @@
 import * as Http from "http"; // * = man importiert alles von http als Http
+//import * as Mongo from "mongodb";
 /* import { ParsedUrlQuery } from "querystring";
 import * as url from "url"; */
 
 export namespace Melmory {
+
+
+    var imageUrl: string = "https://raw.githubusercontent.com/xMelanie99/GIS-SoSe-2021/main/melmory";
+
 
     let port: number = Number(process.env.PORT); // neue Variable vom typ number wird process.env.PORT überwiesen | Port des Serves (Heruko) wird in eine Variable abgespeichert  
     if (!port) // wenn der port nicht gesetzt ist..
@@ -25,4 +30,8 @@ export namespace Melmory {
         _response.write("/pictures/card_decks/japan/sakura.png"); // Gibt als Antwort die URL des request zurück
         _response.end(); // ende/finish/aus
     }
+
+
+
+
 }
