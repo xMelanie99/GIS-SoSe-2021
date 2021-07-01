@@ -18,7 +18,10 @@ var Melmory;
         console.log("Listening"); //wird in der Konsole des Serves ausgegeben
     }
     async function handleRequest(_request, _response) {
-        _response.end(); // beendet 
+        _response.setHeader("content-type", "text/html; charset=utf-8"); // Metadaten werden gestzt
+        _response.setHeader("Access-Control-Allow-Origin", "*"); //Der Zugriff (request) wird auf dem Server erlaubt
+        _response.write("/pictures/card_decks/japan/sakura.png"); // Gibt als Antwort die URL des request zurück
+        _response.end(); // ende/finish/aus
     }
 })(Melmory = exports.Melmory || (exports.Melmory = {}));
 //# sourceMappingURL=server.js.map

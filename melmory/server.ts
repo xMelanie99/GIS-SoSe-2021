@@ -20,8 +20,9 @@ export namespace Melmory {
     }
 
     async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> { // wird immer gesetzt 
-       
-        _response.end(); // beendet 
-
+        _response.setHeader("content-type", "text/html; charset=utf-8"); // Metadaten werden gestzt
+        _response.setHeader("Access-Control-Allow-Origin", "*"); //Der Zugriff (request) wird auf dem Server erlaubt
+        _response.write("/pictures/card_decks/japan/sakura.png"); // Gibt als Antwort die URL des request zurück
+        _response.end(); // ende/finish/aus
     }
 }
