@@ -4,8 +4,8 @@
   "description": "Hallo :)",
   "main": "index.js",
   "scripts": {
-    "start": "node ./Praktikumsaufgabe3.4/server.js",
-    "test": "node ./Praktikumsaufgabe3.4/server.js"
+    "start": "node ./melmory/server.js",
+    "test": "node ./melmory/server.js"
   },
   "repository": {
     "type": "git",
