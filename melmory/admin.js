@@ -3,7 +3,7 @@ var Melmory;
 (function (Melmory) {
     let sendButton = document.getElementById("addCardButton");
     sendButton.addEventListener("click", addCard);
-    let serverUrl = "https://memazing.herokuapp.com/";
+    let serverUrl = "https://memazing.herokuapp.com";
     // let serverUrl: string = "http://localhost:8100";
     let cardData;
     run();

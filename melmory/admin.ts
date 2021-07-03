@@ -7,7 +7,7 @@ namespace Melmory {
     let sendButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("addCardButton");
     sendButton.addEventListener("click", addCard);
 
-    let serverUrl: string = "https://memazing.herokuapp.com/";
+    let serverUrl: string = "https://memazing.herokuapp.com";
     // let serverUrl: string = "http://localhost:8100";
 
     let cardData: CardData[];

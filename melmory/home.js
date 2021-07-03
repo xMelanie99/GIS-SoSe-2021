@@ -4,7 +4,8 @@ var Melmory;
     let gameErrorDiv = document.getElementById("error");
     let playParagraph = document.getElementById("play");
     playParagraph.addEventListener("click", tryGameStart);
-    let serverUrl = "http://localhost:8100";
+    let serverUrl = "https://memazing.herokuapp.com";
+    // let serverUrl: string = "http://localhost:8100";
     let cardData;
     run();
     async function run() {

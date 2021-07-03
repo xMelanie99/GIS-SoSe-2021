@@ -1,7 +1,7 @@
 "use strict";
 var Melmory;
 (function (Melmory) {
-    let serverUrl = "https://memazing.herokuapp.com/";
+    let serverUrl = "https://memazing.herokuapp.com";
     // let serverUrl: string = "http://localhost:8100";
     let scoreData = new Array();
     let medalPaths = ["./pictures/ui/medal1.png", "./pictures/ui/medal2.png", "./pictures/ui/medal3.png"];
