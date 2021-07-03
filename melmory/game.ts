@@ -132,7 +132,7 @@ namespace Melmory {
                 selectedCards[1].element.parentElement.innerHTML = "";
                 correctlyGuessedPairs++;
                 if (correctlyGuessedPairs == pairCount) {
-                    let endTime: number = performance.now()
+                    let endTime: number = performance.now();
                     durationMillis = endTime - startTime;
 
                     durationMillis = Math.round(durationMillis * 100) / 100; // https://stackoverflow.com/questions/11832914/how-to-round-to-at-most-2-decimal-places-if-necessary
