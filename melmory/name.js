@@ -1,7 +1,8 @@
 "use strict";
 var Melmory;
 (function (Melmory) {
-    let serverUrl = "http://localhost:8100";
+    let serverUrl = "https://memazing.herokuapp.com/";
+    // let serverUrl: string = "http://localhost:8100";
     let doneParagraph = document.getElementById("done-button");
     doneParagraph.addEventListener("click", onDoneClicked);
     let currentTimeParagraph = document.getElementById("current-time");

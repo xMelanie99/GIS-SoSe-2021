@@ -5,7 +5,8 @@ namespace Melmory {
         time_millis: number;
     }
 
-    let serverUrl: string = "http://localhost:8100";
+    let serverUrl: string = "https://memazing.herokuapp.com/";
+    // let serverUrl: string = "http://localhost:8100";
 
     let doneParagraph: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("done-button");
     doneParagraph.addEventListener("click", onDoneClicked);

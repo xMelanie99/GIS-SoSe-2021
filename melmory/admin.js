@@ -3,8 +3,8 @@ var Melmory;
 (function (Melmory) {
     let sendButton = document.getElementById("addCardButton");
     sendButton.addEventListener("click", addCard);
-    // let serverUrl: string = "https://memazing.herokuapp.com/";
-    let serverUrl = "http://localhost:8100";
+    let serverUrl = "https://memazing.herokuapp.com/";
+    // let serverUrl: string = "http://localhost:8100";
     let cardData;
     run();
     async function run() {
