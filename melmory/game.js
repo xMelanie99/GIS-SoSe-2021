@@ -54,13 +54,11 @@ var Melmory;
         let cardContainerDiv = document.getElementById("card-container");
         for (let i = 0; i < cardPool.length; i++) {
             let cardDiv = document.createElement("div");
-            cardDiv.style.width = 50 + "px";
-            cardDiv.style.height = 50 + "px";
+            cardDiv.setAttribute("class", "card-div");
             let cardImg = document.createElement("img");
             cardImg.src = "./pictures/ui/sakura.png";
-            cardImg.style.width = 50 + "px";
-            cardImg.style.height = 50 + "px";
             cardImg.setAttribute("id", i.toString());
+            cardImg.setAttribute("class", "card-image");
             cardImg.addEventListener("click", onCardClick);
             cardDiv.appendChild(cardImg);
             cardContainerDiv.appendChild(cardDiv);

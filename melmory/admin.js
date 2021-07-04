@@ -29,11 +29,14 @@ var Melmory;
         let cardCount = Number(localStorage.getItem("card_count"));
         for (let i = 0; i < cardCount; i++) {
             let cardDiv = document.createElement("div");
-            cardDiv.id = i.toString();
+            cardDiv.setAttribute("id", i.toString());
+            cardDiv.setAttribute("class", "div-card");
             let newCardImage = document.createElement("img");
             newCardImage.src = localStorage.getItem("card_#" + i);
+            newCardImage.setAttribute("class", "card-image");
             let deleteCardImg = document.createElement("img");
             deleteCardImg.src = "pictures/ui/cross.png";
+            deleteCardImg.setAttribute("class", "delete-image");
             deleteCardImg.addEventListener("click", removeCard);
             cardDiv.appendChild(newCardImage);
             cardDiv.appendChild(deleteCardImg);
@@ -41,14 +44,14 @@ var Melmory;
         }
     }
     async function addCard() {
-        let formData = new FormData(document.forms[0]); // das was im Formular geschrieben wird
+        let formData = new FormData(document.forms[0]);
         let cardUrlToAdd = formData.get("cardUrl").toString();
         let url = serverUrl + "/admin-add-card";
         url = url + "?cardUrl=" + cardUrlToAdd;
         await fetch(url);
         await run();
-        let form = document.getElementById("form"); // form Element wird in eine Var gespeichert
-        form.reset(); // Inhalte werden zurückgesetzt
+        let form = document.getElementById("form");
+        form.reset();
     }
     async function removeCard(_event) {
         let eventTargetElement = _event.target;

@@ -12,11 +12,11 @@ var Melmory;
     currentTimeParagraph.textContent = "time: " + timeSeconds.toString() + " s";
     async function onDoneClicked() {
         let timeMillis = Number(localStorage.getItem("time_millis"));
-        let formData = new FormData(document.forms[0]); // document.forms = array aus allen Formularen       
-        let data = { username: formData.get("username").toString(), time_millis: timeMillis }; //.toString() = umwandlung in string | values wurden in objekt data gespeichert
-        let query = new URLSearchParams(data); // neue query aus dem objekt erstellt
-        serverUrl = serverUrl + "/add-new-score?" + query.toString(); // query wurde der url hinz | ? = makiert eine query
-        await fetch(serverUrl); // macht erst weiter wenn die url da ist (asycron)
+        let formData = new FormData(document.forms[0]);
+        let data = { username: formData.get("username").toString(), time_millis: timeMillis };
+        let query = new URLSearchParams(data);
+        serverUrl = serverUrl + "/add-new-score?" + query.toString();
+        await fetch(serverUrl);
         window.location.href = "score.html"; //https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
     }
 })(Melmory || (Melmory = {}));

@@ -1,0 +1,25 @@
+body {
+    background:beige;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+.nav-content {
+    color: gray;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer; /* https://de.w3docs.com/snippets/css/wie-kann-man-den-mauszeiger-mit-css-andern.html */
+}
+
+.nav {
+    text-decoration: none;
+    color:gray;
+    font-size: 40px;
+}
+
+.nav:hover {
+    color:blue;
+}
+
+#play:hover {
+    color:blue;
+}

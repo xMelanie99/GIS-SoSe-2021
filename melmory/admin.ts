@@ -39,13 +39,16 @@ namespace Melmory {
         let cardCount: number = Number(localStorage.getItem("card_count"));
         for (let i: number = 0; i < cardCount; i++) {
             let cardDiv: HTMLDivElement = <HTMLDivElement>document.createElement("div");
-            cardDiv.id = i.toString();
+            cardDiv.setAttribute("id", i.toString());
+            cardDiv.setAttribute("class", "div-card");
 
             let newCardImage: HTMLImageElement = document.createElement("img");
             newCardImage.src = localStorage.getItem("card_#" + i);
+            newCardImage.setAttribute("class", "card-image");
 
             let deleteCardImg: HTMLImageElement = document.createElement("img");
             deleteCardImg.src = "pictures/ui/cross.png";
+            deleteCardImg.setAttribute("class", "delete-image");
             deleteCardImg.addEventListener("click", removeCard);
 
             cardDiv.appendChild(newCardImage);
@@ -56,7 +59,7 @@ namespace Melmory {
     }
 
     async function addCard(): Promise<void> {
-        let formData: FormData = new FormData(document.forms[0]); // das was im Formular geschrieben wird
+        let formData: FormData = new FormData(document.forms[0]);
         let cardUrlToAdd: string = formData.get("cardUrl").toString();
 
         let url: string = serverUrl + "/admin-add-card";
@@ -66,8 +69,8 @@ namespace Melmory {
         await fetch(url);
         await run();
 
-        let form: HTMLFormElement = <HTMLFormElement>document.getElementById("form"); // form Element wird in eine Var gespeichert
-        form.reset(); // Inhalte werden zurückgesetzt
+        let form: HTMLFormElement = <HTMLFormElement>document.getElementById("form");
+        form.reset();
     }
 
     async function removeCard(_event: Event): Promise<void> {

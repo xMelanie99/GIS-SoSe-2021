@@ -1,0 +1,39 @@
+body {
+    background:rgb(253, 253, 242);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    color: gray;
+}
+
+h1 {
+    text-align: center;
+    
+}
+
+#form {
+    text-align: center;
+}
+
+input {
+    width: 300px;
+    height: 24px; /*angepasst an den Button*/
+}
+
+#addCardButton {
+    padding: 6px;
+}
+
+#addCardButton:hover {
+    cursor: pointer;
+}
+
+.card-div {
+    display: flex;
+}
+
+.card-image {
+    width: 200px;
+}
+
+.delete-image {
+    width: 200px;
+}

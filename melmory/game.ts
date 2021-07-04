@@ -76,14 +76,12 @@ namespace Melmory {
         let cardContainerDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("card-container");
         for (let i: number = 0; i < cardPool.length; i++) {
             let cardDiv: HTMLDivElement = <HTMLDivElement>document.createElement("div");
-            cardDiv.style.width = 50 + "px";
-            cardDiv.style.height = 50 + "px";
+            cardDiv.setAttribute("class", "card-div");
 
             let cardImg: HTMLImageElement = <HTMLImageElement>document.createElement("img");
             cardImg.src = "./pictures/ui/sakura.png";
-            cardImg.style.width = 50 + "px";
-            cardImg.style.height = 50 + "px";
             cardImg.setAttribute("id", i.toString());
+            cardImg.setAttribute("class", "card-image");
             cardImg.addEventListener("click", onCardClick);
 
             cardDiv.appendChild(cardImg);
