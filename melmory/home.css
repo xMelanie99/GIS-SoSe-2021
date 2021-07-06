@@ -17,9 +17,9 @@ body {
 }
 
 .nav:hover {
-    color:blue;
+    color: lightcoral;
 }
 
 #play:hover {
-    color:blue;
+    color:lightcoral;
 }

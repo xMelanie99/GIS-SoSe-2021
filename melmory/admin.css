@@ -2,38 +2,72 @@ body {
     background:rgb(253, 253, 242);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
     color: gray;
+    width: 100%;
+    height: auto;
+}
+
+/* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+.grid-box { 
+    display: grid;
+    /*Spalte*/
+    grid-template-columns: 33% 33% 33%;
+    /*Zeile*/ 
+    grid-template-rows: auto 5fr auto;
+    grid-template-areas: 
+        "header1 header2 header3"
+        "content1 content2 content3 "
+        "footer1 footer2 footer3";
+
+    grid-gap: 25px;
+}
+
+.card-image {
+    width: 100px;
+}
+
+.delete-image {
+    width: 20px;
+    height: auto;
+}
+
+#logo {
+    grid-area: header1;
 }
 
 h1 {
     text-align: center;
-    
+    margin: auto;
+    font-size: 45px;
+    padding: 20px;
 }
 
-#form {
+#container-2 {
+
+    grid-area: header2;
     text-align: center;
+    margin: auto;
+}
+
+.div-card {
+    margin: 1px;
+    background-color: rgb(236, 228, 228);
+    float: right; 
+}
+
+#cards {
+    grid-area: content2;
 }
 
 input {
+    text-align: center;
     width: 300px;
-    height: 24px; /*angepasst an den Button*/
+    height: 22px; /*angepasst an den Button*/
 }
 
-#addCardButton {
-    padding: 6px;
+#add-card-button {
+    padding: 4px;
 }
 
 #addCardButton:hover {
     cursor: pointer;
-}
-
-.card-div {
-    display: flex;
-}
-
-.card-image {
-    width: 200px;
-}
-
-.delete-image {
-    width: 200px;
 }
