@@ -137,7 +137,8 @@ namespace Melmory {
 
                     console.log("End time set to " + endTime);
 
-                    localStorage.setItem("pair_count", pairCount.toString());
+                    // localStorage.setItem("pair_count", pairCount.toString());
+                    // Zeit wird gesetzt wie lange das Spiel gedauert hat
                     localStorage.setItem("time_millis", durationMillis.toString());
 
                     window.location.href = "name.html"; //https://www.w3schools.com/howto/howto_js_redirect_webpage.asp

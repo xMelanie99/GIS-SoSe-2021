@@ -1,6 +1,6 @@
 namespace Melmory { // ???
 
-    //4. für Umwandlung von JSON Text in Interfaceobjekt
+    //4. Die erhalten Daten vom Server werden aus einem JSON string in ein array aus diesen Interfaceobjekt gespeichert
     interface CardData {
         
         cardsUrl: string;
@@ -32,7 +32,7 @@ namespace Melmory { // ???
     async function getCardURLsFromServer(): Promise<void> {
         
         let response: Response = await fetch(serverUrl + "/get-all-card-urls");
-        // Gibt die Antwort als Ausgabe (in JSON) aus
+        // Gibt die Antwort des Servers als JSON string aus und wird im cardData array gespeichert
         cardData = await response.json();
     }
 
@@ -44,7 +44,7 @@ namespace Melmory { // ???
         localStorage.setItem("card_count", cardData.length.toString());
         // damit alle Karten urls ins LocalStorage gespeichert werden
         for (let i: number = 0; i < cardData.length; i++) {
-
+             
             localStorage.setItem("card_#" + i, cardData[i].cardsUrl);
         }
     }
