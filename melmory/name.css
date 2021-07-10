@@ -1,0 +1,118 @@
+body {
+    background-image: url("pictures/ui/wave.png");
+    background-position: center; /*https://www.w3schools.com/howto/howto_css_full_page.asp*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    color: rgb(105, 105, 131);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.grid-box{
+    display: grid;
+    grid-template-columns: 30% 1fr 30%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header1 header2 ."
+        ". content2 ."
+        ". footer2 .";
+}
+
+form {
+    grid-area: content2;
+    text-align: center;
+}
+
+#done-button {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#input {
+    text-align: center;
+    width: 250px;
+    height: 22px;
+}
+
+#current-time {
+    color: rgba(105, 105, 131, 0.644);
+}
+
+#done-button:hover {
+    color:rgb(133, 185, 192);
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+    .grid-box {
+        grid-template-columns: 30% auto 30%;
+    }
+
+    #back {
+        width: 100%;  
+    }
+
+    #back img {
+        width:50px;
+        margin-left: 25px;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 1112px) {
+    .grid-box { 
+        
+        grid-template-columns: 100%;
+      
+        grid-template-rows: auto 2fr auto auto;
+
+        grid-template-areas: 
+            "header1"
+            "content2";
+    
+        grid-gap: 25px;
+    }
+}
+
+/* Smartphone */
+@media screen and (max-width: 600px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+    
+    .grid-box { 
+        
+        grid-template-columns: 100%;
+      
+        grid-template-rows: auto 5fr auto auto;
+
+        grid-template-areas: 
+            "header1"
+            "content2"
+            "footer1";
+    
+        grid-gap: 25px;
+    }  
+
+    #logo img {
+        width: auto;
+    }
+
+    h1 {
+        width: 270px;
+        font-size: 25px;
+        margin-left: 12px;
+        margin-bottom: 50px;
+    }
+
+    #done-button {
+        margin-top: 70px;
+    }
+  }

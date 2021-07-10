@@ -4,6 +4,7 @@ namespace Melmory {
     interface CardData {
         cardsUrl: string;
     }
+    
 
     // error & play wurden im HTML Doc. gesucht und in eine Variable gespeichert
     let gameErrorDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("error");
@@ -18,7 +19,7 @@ namespace Melmory {
     // let serverUrl: string = "http://localhost:8100";
 
     //neue Variable wurde dem CardData-interface array zugewiesen
-    let cardData: CardData[];
+    let cardData: CardData[] = [];
 
     // soll ausgeführt werden sobald die Seite aufgerufen wird
     run();

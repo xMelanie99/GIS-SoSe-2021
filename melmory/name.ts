@@ -26,7 +26,7 @@ namespace Melmory {
     timeSeconds = Math.round(timeSeconds * 100) / 100; // https://stackoverflow.com/questions/11832914/how-to-round-to-at-most-2-decimal-places-if-necessary
 
     // Die Zeit wird für den User ausgegeben 
-    currentTimeParagraph.textContent = "time: " + timeSeconds.toString() + " s";
+    currentTimeParagraph.textContent = "Your time: " + timeSeconds.toString() + " s";
 
     // username und Zeit wird an den Server gesendet
     async function sendScoreToServer(): Promise<void> {

@@ -1,9 +1,14 @@
 body {
-    background:rgb(253, 253, 242);
+    background-image: url("pictures/ui/wave.png");
+    background-position: center; /*https://www.w3schools.com/howto/howto_css_full_page.asp*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    color: gray;
-    width: 100%;
-    height: auto;
+    color: rgb(105, 105, 131);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
 }
 
 /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
@@ -22,52 +27,161 @@ body {
 }
 
 .card-image {
-    width: 100px;
+    width: 120px;
 }
 
 .delete-image {
     width: 20px;
     height: auto;
+    cursor: pointer;
+}
+
+#back-button {
+    cursor: pointer;
 }
 
 #logo {
-    grid-area: header1;
+    grid-area: "header1";
+    float: left;
 }
 
 h1 {
     text-align: center;
-    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 20px;
     font-size: 45px;
-    padding: 20px;
 }
 
 #container-2 {
-
-    grid-area: header2;
+    grid-area: "header2";
     text-align: center;
     margin: auto;
 }
 
 .div-card {
     margin: 1px;
-    background-color: rgb(236, 228, 228);
-    float: right; 
+    float: left; 
 }
 
 #cards {
+    /* background-color: rgba(182, 184, 207, 0.603); */
     grid-area: content2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
 }
 
 input {
     text-align: center;
     width: 300px;
-    height: 22px; /*angepasst an den Button*/
+    height: 22px;
 }
 
 #add-card-button {
+    color: rgb(114, 113, 113);
     padding: 4px;
+    cursor: pointer;
 }
 
 #addCardButton:hover {
     cursor: pointer;
 }
+
+#back img {
+    width: 60px;
+}
+
+#back {
+    grid-area: footer1;
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+    .grid-box {
+        grid-template-columns: 30% auto 30%;
+    }
+
+    #back {
+        width: 100%;  
+    }
+
+    #back img {
+        width:50px;
+        margin-left: 25px;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 1112px) {
+    .grid-box { 
+        
+        grid-template-columns: 100%;
+      
+        grid-template-rows: auto 5fr auto auto;
+
+        grid-template-areas: 
+            "header1"
+            "header2"
+            "content2"
+            "footer1";
+    
+        grid-gap: 25px;
+    }
+    
+    #back {
+        width: 100%;  
+    }
+
+    #back img {
+        width:50px;
+        margin-left: 25px;
+    }
+}
+
+/* Smartphone */
+@media screen and (max-width: 600px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+    
+    .grid-box { 
+        
+        grid-template-columns: 100%;
+      
+        grid-template-rows: auto 5fr auto auto;
+
+        grid-template-areas: 
+            "header1"
+            "header2"
+            "content2"
+            "footer1";
+    
+        grid-gap: 25px;
+    }
+
+    #logo img {
+        width: auto;
+    }
+
+    h1 {
+
+        font-size: 30px;
+    }
+
+    #back {
+        width: 100%;  
+    }
+
+    #back img {
+        width:40px;
+        margin-left: 25px;
+    }
+
+    input {
+        width: auto;
+    }
+  }

@@ -16,7 +16,7 @@ namespace Melmory { // ???
     // let serverUrl: string = "http://localhost:8100"; 
 
     //neue Variable wurde dem CardData-interface array zugewiesen
-    let cardData: CardData[];
+    let cardData: CardData[] = [];
 
     
     run();
@@ -99,7 +99,7 @@ namespace Melmory { // ???
         // url vom server, anfang ohne query
         let url: string = serverUrl + "/admin-add-card";
 
-        // url mit query die gelöscht werden soll
+        //++ url mit query die hinzugefügt werden soll
         url = url + "?cardUrl=" + cardUrlToAdd;
 
         // ruft mit query auf und wartet bis der Server eine Antwort gibt
@@ -115,7 +115,7 @@ namespace Melmory { // ???
 
     // löscht die ausgewählte Karte 
     async function removeCard(_event: Event): Promise<void> {
-        // das target wird eventTargetElement gespeichert
+        //~ das target wird eventTargetElement gespeichert || target = HTML Element was angeklickt wurde
         let eventTargetElement: HTMLImageElement = <HTMLImageElement>_event.target;
 
         // key für Wertabfrage vom LocalStorage 

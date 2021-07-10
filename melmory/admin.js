@@ -1,65 +1,102 @@
 "use strict";
 var Melmory;
 (function (Melmory) {
-    let sendButton = document.getElementById("add-card-button"); // send Button wird aus dem HTML gesucht
-    sendButton.addEventListener("click", addCard); // sobald auf den Button geklickt wird, wird die Funktion addCard aufgerufen
-    let serverUrl = "https://memazing.herokuapp.com"; // 1. Adresse vom Server, bei dem die Abfragen und Anfrage gemacht werden
-    // let serverUrl: string = "http://localhost:8100"; //Adresse für den lokalen Server
-    let cardData; //5. neue Variable wurde dem CardData-interface array zugewiesen || array, weil mehrere urls gepseichert werden
-    run(); // soll ausgeführt werden sobald die Seite aufgerufen wird
+    let sendButton = document.getElementById("add-card-button");
+    sendButton.addEventListener("click", addCard);
+    // Adresse vom Server
+    let serverUrl = "https://memazing.herokuapp.com";
+    //Adresse für den lokalen Server
+    // let serverUrl: string = "http://localhost:8100"; 
+    //neue Variable wurde dem CardData-interface array zugewiesen
+    let cardData = [];
+    run();
+    // frägt url vom Server ab, macht die urls in LocalStorage und stellt die Karten dann dar
     async function run() {
         await getCardURLsFromServer();
         await putCardsInLocalStorage();
         await showCards();
     }
+    // die urls der Bilder werden beim Server angefragt
     async function getCardURLsFromServer() {
-        let response = await fetch(serverUrl + "/get-all-card-urls"); // 3. Antwort des Servers wird in eine variable gespeichert || fetch = Anfrage an den Server || await = wartet bis fetch komplett ausgeführt wurde und wandelt das Promise<Response> in Response um
-        cardData = await response.json(); // 6. Gibt die Antwort als Ausgabe (in JSON) aus
+        let response = await fetch(serverUrl + "/get-all-card-urls");
+        // Gibt die Antwort des Servers als JSON string aus und wird im cardData array gespeichert
+        cardData = await response.json();
     }
+    // die urls der Karten werden in localStorage gespeichert
     function putCardsInLocalStorage() {
-        localStorage.clear(); // 8. der localStorage wird geleert, damit er nicht immer wieder prüfen muss was entfernt oder hinzugefügt wird
-        localStorage.setItem("card_count", cardData.length.toString()); // 9. setItem = fügt dem localStorage etwas hinzu || "card_count" = hat in dem localStorage (diesen...) Wert --> || cardData.length = Länge des Array (die vorhanden urls) --> Die Zahl wird in einen string umgewandelt
-        for (let i = 0; i < cardData.length; i++) { // 10. damit alle Karten urls ins LocalStorage gespeichert werden
-            localStorage.setItem("card_#" + i, cardData[i].cardsUrl); // 11. setItem(key,value) --> keys sind einzigartig und dürfen nicht mehrmals eingetragen werden || + i = damit keys in der for-Schleife einzigartig bleiben und später alle einfacher abgefragt werden können || 1. Lampe, 2. Tor, 3. Fuji || card_#0 = Lampe(url zum Bild der Lampe), card_#1 = Tor (url zum Bild der Tor), card_#2 = Fuji (url zum Bild der Fuji)
+        // der localStorage wird geleert
+        localStorage.clear();
+        // fügt dem localStorage die Anzahl der Karten hinzu
+        localStorage.setItem("card_count", cardData.length.toString());
+        // damit alle Karten urls ins LocalStorage gespeichert werden
+        for (let i = 0; i < cardData.length; i++) {
+            localStorage.setItem("card_#" + i, cardData[i].cardsUrl);
         }
     }
+    // Alle Karten im LocalStorage werden angezeigt
     function showCards() {
-        document.getElementById("cards").innerHTML = ""; // 13. HTML id "cards" wurde angesprochen und alle Unterelemente wurden geleert || innerHTML = alles was zwischen <div> hier drin </div> steht || warum? = um alle vorherigen Bilder auf der HTML zu löschen 
-        let cardCount = Number(localStorage.getItem("card_count")); // 14. in der neu erstellten Variable wird aus Z.30 die Anzahl (key: "card_count") der Karten ausgelesen und zugewiesen || der Wert zum key "card_count" wird von string in eine Zahl (number) umgewandelt
-        for (let i = 0; i < cardCount; i++) { // 15. Zählt von 0 bis cardCount -1 hoch und liest die Karten aus dem LocalSotrage aus und stellt sie dar || warum? da im game.ts nur über LocalStorage die urls aufgerufen werden kann und nicht über den CardData[](array) und damit man später das Problem nicht mehr hat 
-            let cardDiv = document.createElement("div"); // 16. Ein neues DIV element wird erzeugt und in cardDiv gespeichert
-            cardDiv.setAttribute("id", i.toString()); // 17. warum wird die id aufs i gesetzt? Wenn man auf das Kreuz (Bild) klickt, damit man später weiß welche Karte gelöscht werden muss || Jedem div, in dem Bild beide Bilder vorhanden sind, wurde eine eigene id zugewiesen 
-            cardDiv.setAttribute("class", "div-card"); // 18. Für CSS damit es gesteltet werden kann
-            let newCardImage = document.createElement("img"); // 19. Ein neues img-element wird erzeugt und in newCardImage gespeichert
-            newCardImage.src = localStorage.getItem("card_#" + i); // 20. dem Bild wird die url aus dem LocalStorage zugewiesen (als Hilfe Zeile 32) || src =
-            newCardImage.setAttribute("class", "card-image"); // 21. Für CSS damit es gesteltet werden kann
-            let deleteCardImg = document.createElement("img"); // 22.  Ein neues img-element wird erzeugt und in deleteCardImage gespeichert
-            deleteCardImg.src = "pictures/ui/cross.png"; // 23. deleteCardImg wurde ein Bild (zum löschen) hinzugefügt
-            deleteCardImg.setAttribute("class", "delete-image"); // 24. Für CSS damit es gesteltet werden kann
-            deleteCardImg.addEventListener("click", removeCard); // 33. Beim klicken wird die Funktion removeCard sofort aufgerufen 
-            cardDiv.appendChild(newCardImage); // 34. Fügt das Bild als Unterelement dem cardDiv hinzu
-            cardDiv.appendChild(deleteCardImg); // 35. Fügt das Bild als Unterelemnt dem cardDiv hinzu
-            document.getElementById("cards").appendChild(cardDiv); // 36. das cardDiv wird als Unterelement vom div-Element "cards" hinzugefügt
+        // HTML id "cards" wurde angesprochen und alle Unterelemente wurden geleert 
+        document.getElementById("cards").innerHTML = "";
+        // in Variable wird die Anzahl (key: "card_count") der Karten ausgelesen und zugewiesen
+        let cardCount = Number(localStorage.getItem("card_count"));
+        // Zählt von 0 bis cardCount -1 hoch und liest die Karten aus dem LocalSotrage aus und stellt sie dar 
+        for (let i = 0; i < cardCount; i++) {
+            // Ein neues DIV element wird erzeugt und in cardDiv gespeichert
+            let cardDiv = document.createElement("div");
+            // Jedem div, in dem beide Bilder vorhanden sind, wurde eine eigene id zugewiesen 
+            cardDiv.setAttribute("id", i.toString());
+            // Für CSS damit es gesteltet werden kann
+            cardDiv.setAttribute("class", "div-card");
+            let newCardImage = document.createElement("img");
+            // dem Bild wird die url aus dem LocalStorage zugewiesen
+            newCardImage.src = localStorage.getItem("card_#" + i);
+            // Für CSS damit es gesteltet werden kann
+            newCardImage.setAttribute("class", "card-image");
+            let deleteCardImg = document.createElement("img");
+            // deleteCardImg wurde ein Bild (zum löschen) hinzugefügt
+            deleteCardImg.src = "pictures/ui/cross.png";
+            // Für CSS damit es gesteltet werden kann
+            deleteCardImg.setAttribute("class", "delete-image");
+            // Beim klicken wird die Funktion removeCard sofort aufgerufen 
+            deleteCardImg.addEventListener("click", removeCard);
+            // Fügt das Bild als Unterelement dem cardDiv hinzu
+            cardDiv.appendChild(newCardImage);
+            // Fügt das Bild als Unterelemnt dem cardDiv hinzu 
+            cardDiv.appendChild(deleteCardImg);
+            // das cardDiv wird als Unterelement vom div-Element "cards" hinzugefügt
+            document.getElementById("cards").appendChild(cardDiv);
         }
     }
+    // Fügt eine Karte per url hinzu
     async function addCard() {
-        let formData = new FormData(document.forms[0]); // 38. document.forms[0] = erste form-Element im HTML-Dokument --> wird in formData gespeichert
-        let cardUrlToAdd = formData.get("card-url").toString(); // 39. die url aus dem input-Feld wird ausgelsen und in cardUrlToAdd gespeichert 
-        let url = serverUrl + "/admin-add-card"; // 40. url vom server, anfang ohne query
-        url = url + "?cardUrl=" + cardUrlToAdd; // 41. url mit query die gelöscht werden soll
-        await fetch(url); // 42. ruft mit query auf und wartet bis der Server eine Antwort gibt
-        await run(); //  43 .führt die Funktion run auf und wartet bis sie fertig ausgeführt wurden
-        let form = document.getElementById("form"); // 44. form aus HMTL wird in form gespeichert 
-        form.reset(); // 45. form wird geleert
+        // document.forms[0] = erste form-Element im HTML-Dokument --> wird in formData gespeichert
+        let formData = new FormData(document.forms[0]);
+        // die url aus dem input-Feld wird ausgelsen und in cardUrlToAdd gespeichert 
+        let cardUrlToAdd = formData.get("card-url").toString();
+        // url vom server, anfang ohne query
+        let url = serverUrl + "/admin-add-card";
+        //++ url mit query die hinzugefügt werden soll
+        url = url + "?cardUrl=" + cardUrlToAdd;
+        // ruft mit query auf und wartet bis der Server eine Antwort gibt
+        await fetch(url);
+        // führt die Funktion run auf und wartet bis sie fertig ausgeführt wurden
+        await run();
+        let form = document.getElementById("form");
+        form.reset();
     }
+    // löscht die ausgewählte Karte 
     async function removeCard(_event) {
-        let eventTargetElement = _event.target; // 26. target (im HMTL) = das was angeklickt wurde ist target (hier das Bild zum löschen --cross.png--) ||  das target wird eventTargetElement gespeichert
-        let localStorageCardID = "card_#" + eventTargetElement.parentElement.id; // 27. key für Wertabfrage vom LocalStorage nächste Zeile
-        let cardUrlToRemove = localStorage.getItem(localStorageCardID); // 28. die url die gelöscht werden sol
-        let url = serverUrl + "/admin-delete-card"; // 29. url vom server, anfang ohne query
-        url = url + "?cardUrl=" + cardUrlToRemove; // 30. url mit query die gelöscht werden soll
-        await fetch(url); // 31. ruft mit query auf und wartet bis der Server eine Antwort gibt
-        await run(); // 32. führt die Funktion run auf und wartet bis sie fertig ausgeführt wurden
+        //~ das target wird eventTargetElement gespeichert || target = HTML Element was angeklickt wurde
+        let eventTargetElement = _event.target;
+        // key für Wertabfrage vom LocalStorage 
+        let localStorageCardID = "card_#" + eventTargetElement.parentElement.id;
+        let cardUrlToRemove = localStorage.getItem(localStorageCardID);
+        // url vom server, anfang ohne query
+        let url = serverUrl + "/admin-delete-card";
+        // url mit query die gelöscht werden soll
+        url = url + "?cardUrl=" + cardUrlToRemove;
+        await fetch(url);
+        await run();
     }
 })(Melmory || (Melmory = {}));
 //# sourceMappingURL=admin.js.map

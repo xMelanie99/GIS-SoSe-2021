@@ -12,7 +12,7 @@ namespace Melmory {
     // let serverUrl: string = "http://localhost:8100";
 
     // ein array aus ScoreData wurde erstellt || warum? wird benötigt um JSON Antwort vom Server in dieses array zu speichern
-    let scoreData: ScoreData[];
+    let scoreData: ScoreData[] = [];
 
     // array von den Bilder (Medallien) in absteigender Reihenfolge --> 1. 2. 3 
     let medalPaths: string[] = ["./pictures/ui/medal1.png", "./pictures/ui/medal2.png", "./pictures/ui/medal3.png"];
