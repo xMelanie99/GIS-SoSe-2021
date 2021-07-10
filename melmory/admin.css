@@ -15,7 +15,7 @@ body {
 .grid-box { 
     display: grid;
     /*Spalte*/
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 33% 50% 33%;
     /*Zeile*/ 
     grid-template-rows: auto 5fr auto;
     grid-template-areas: 
@@ -41,8 +41,7 @@ body {
 }
 
 #logo {
-    grid-area: "header1";
-    float: left;
+    grid-area: header1;
 }
 
 h1 {
@@ -53,9 +52,9 @@ h1 {
 }
 
 #container-2 {
-    grid-area: "header2";
+    grid-area: header2;
     text-align: center;
-    margin: auto;
+    margin-top: 200px;
 }
 
 .div-card {
@@ -68,7 +67,7 @@ h1 {
     grid-area: content2;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     
 }
 
@@ -113,26 +112,29 @@ input {
 }
 
 /* Tablet */
-@media screen and (min-width: 600px) and (max-width: 1112px) {
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    body {
+        display: flex;
+        justify-content: center;
+        overflow-x: hidden;
+    }
     .grid-box { 
-        
-        grid-template-columns: 100%;
-      
-        grid-template-rows: auto 5fr auto auto;
-
+        display: grid;
+        /*Spalte*/
+        grid-template-columns:  10% 80% 10%;
+        /*Zeile*/ 
+        grid-template-rows:  30% 60% 10%;
         grid-template-areas: 
-            "header1"
-            "header2"
-            "content2"
-            "footer1";
+            "header1 header2 header3"
+            "content1 content2 content3 "
+            "footer1 footer2 footer3";
     
         grid-gap: 25px;
     }
-    
-    #back {
-        width: 100%;  
-    }
 
+    #cards{
+        height: 300px;
+    }
     #back img {
         width:50px;
         margin-left: 25px;
@@ -164,7 +166,7 @@ input {
     }
 
     #logo img {
-        width: auto;
+        justify-content: center;
     }
 
     h1 {

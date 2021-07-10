@@ -44,7 +44,7 @@ namespace Melmory {
         // Frägt die Kartenanzahl im Local Storage ab
         let cardCount: number = Number(localStorage.getItem("card_count"));
 
-        // die urls aus dem Local Storage werden in possibleCards array gespeichert
+        // die urls aus dem Local Storage werden in allCards array gespeichert
         let allCards: string[] = [];
         for (let i: number = 0; i < cardCount; i++) {
             // fragt nach bspw. im ersten Durchlauf nach card_#0 ab...
@@ -56,21 +56,30 @@ namespace Melmory {
         // shuffel = mischt den array, den ihm gegeben wird --> muss vom  Typ string[] sein
         shuffle(allCards);
 
+        // allCards = array in dem die urls aus dem Local Storage || for-Schleife macht dies 8x
         for (let i: number = 0; i < pairCount; i++) {
+            // pop() = löscht den letzten Eintrag im allCards array und gibt diesen zurück
             let randomCard: string = allCards.pop();
 
+            // random Karte wird in die Spielfläche hinzugefügt
             cardPool.push(randomCard);
         }
     }
 
+    // dubliziert die Eintrage im cardPool
     function duplicateCardsInArray(): void {
-        let tmp: string[] = new Array<string>();
+        // leeres string array --> momentane Spielfläche wird kopiert und wird temporär eingefügt, damit es min 16 Spielkarten sind
+        let tmp: string[] = [];
 
+        // Schleife in der die Spielfäche kopiert wird
         for (let i: number = 0; i < cardPool.length; i++) {
+            // fügt den Eintrag an der Stelle i vom cardPool in tmp array ein
             tmp.push(cardPool[i]);
         }
 
+        // geht in alle Einträge vom tmp array durch und fügt diese dem cardPool array hinzu
         for (let i: number = 0; i < tmp.length; i++) {
+            // fügt den Eintrag an der Stelle i vom tmp array in cardPool array ein
             cardPool.push(tmp[i]);
         }
     }

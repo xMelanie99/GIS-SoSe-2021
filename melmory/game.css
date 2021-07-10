@@ -1,9 +1,174 @@
+body {
+    background-image: url("pictures/ui/wave.png");
+    background-position: center; /*https://www.w3schools.com/howto/howto_css_full_page.asp*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    color: rgb(105, 105, 131);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.grid-box{
+    display: grid;
+    grid-template-columns: 35% 30% 35%;
+      
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header1 . ."
+        ". content2 ."
+        "footer1 . .";
+}
+
+#logo img {
+    grid-area: header1;
+}
+
+#card-container {
+    grid-area: content2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.card-image:hover {
+    background-color: rgb(209, 212, 224);
+}
+
+p {
+    grid-area: footer1;
+}
+
 .card-div {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
 }
 
 .card-image {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
 }
+
+#back img {
+    width: 60px;
+}
+
+#back {
+    grid-area: footer1;
+}
+
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+
+    #back {
+        width: 100%;  
+    }
+
+    #back img {
+        width:50px;
+        margin-left: 25px;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+    .grid-box { 
+        
+        grid-template-columns: 10% auto 10%;
+      
+        grid-template-rows: auto 1fr auto;
+
+        grid-template-areas: 
+            ". header2 ."
+            ". content2 ."
+            "footer1 . .";
+    
+        grid-gap: 25px;
+    }
+
+    #logo img {
+        grid-area: header2;
+        margin-left: 230px;
+    }
+
+    .card-div {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .card-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    #back {
+        width: 100%;  
+    }
+
+    #back img {
+        width:50px;
+        margin-left: 25px;
+    }
+}
+
+/* Smartphone */
+@media screen and (max-width: 600px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+    
+    .grid-box { 
+        
+        grid-template-columns: 100%;
+      
+        grid-template-rows: auto 5fr auto;
+
+        grid-template-areas: 
+            "header1"
+            "content2"
+            "footer1";
+    
+        grid-gap: 25px;
+    }
+
+    #card-container {
+        grid-area: content2;
+    }
+
+    .card-div {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .card-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    #logo img {
+        justify-content: center;
+    }
+
+    #back {
+        width: 100%;  
+    }
+
+    #back img {
+        width:40px;
+        margin-left: 25px;
+    }
+  }

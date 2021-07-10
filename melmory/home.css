@@ -12,6 +12,7 @@ body {
 }
 
 .nav-content {
+    grid-area: content2;
     color: rgb(145, 145, 167);
     font-size: 40px;
     text-align: center;
@@ -36,8 +37,50 @@ body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
     color: rgba(252, 103, 103, 0.952);
     font-size: 20px;
-    grid-area: header2;
-    width: 300px;
+    grid-area: content2;
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+    #back {
+        width: 100%;  
+    }
+
+    #back img {
+        width:50px;
+        margin-left: 25px;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    body {
+        display: flex;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+    .grid-box { 
+        
+        grid-template-columns: 100%;
+      
+        grid-template-rows: auto 5fr auto auto;
+
+        grid-template-areas: 
+            "header1"
+            "content2"
+            "footer2";
+    
+        grid-gap: 25px;
+    }
+    
+    #back {
+        width: 100%;  
+    }
+
+    #back img {
+        width:50px;
+        margin-left: 25px;
+    }
 }
 
 /* Smartphone */
@@ -49,8 +92,17 @@ body {
         overflow-x: hidden;
     }
 
-    #logo img {
-        width: auto;
+    .grid-box { 
+        
+        grid-template-columns: 100%;
+      
+        grid-template-rows: auto 5fr auto auto;
+
+        grid-template-areas: 
+            "header1"
+            "content2"
+            "footer2";
+        grid-gap: 25px;
     }
     
     #back {
@@ -67,7 +119,6 @@ body {
     }
 
     #play-button {
-        text-align: center;
         font-size: 25px;
     }
 

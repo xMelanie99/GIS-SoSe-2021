@@ -63,7 +63,7 @@ form {
 }
 
 /* Tablet */
-@media screen and (min-width: 600px) and (max-width: 1112px) {
+@media screen and (min-width: 600px) and (max-width: 1024px) {
     .grid-box { 
         
         grid-template-columns: 100%;
