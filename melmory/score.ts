@@ -45,7 +45,7 @@ namespace Melmory {
     function displayHighscores(): void {
         // Damit man sieht, dass der Client was macht
         console.log("Displaying " + scoreData.length + " scores...");
-        // sotiert das scoreData array in absteigender Reihenfolge abhängig von der Zeit (time_millis)
+        // sotiert das scoreData array in absteigender Reihenfolge abhängig von der Zeit (time_millis) || Lamda Funktion: hat immer einen Pfeil, links vom Pfeil sind die Parameter, Typen der Paramter hängen von der Funktion ab, die die Funktioon braucht, rechts vom Pfeil --> was zurück gegeben wird 
         scoreData.sort((n1, n2) => n1.time_millis - n2.time_millis); // https://stackoverflow.com/questions/21687907/typescript-sorting-an-array  --> https://www.w3schools.com/js/js_array_sort.asp 
 
         // score-container wird in HMTL gesucht und in eine Variable gespeichert
