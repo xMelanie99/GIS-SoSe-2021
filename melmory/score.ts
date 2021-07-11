@@ -11,7 +11,7 @@ namespace Melmory {
     // Adresse für den lokalen Server
     // let serverUrl: string = "http://localhost:8100";
 
-    // ein array aus ScoreData wurde erstellt || warum? wird benötigt um JSON Antwort vom Server in dieses array zu speichern
+    // ein array aus ScoreData wurde erstellt
     let scoreData: ScoreData[] = [];
 
     // array von den Bilder (Medallien) in absteigender Reihenfolge --> 1. 2. 3 
@@ -27,7 +27,7 @@ namespace Melmory {
     // soll ausgeführt werden sobald die Seite aufgerufen wird
     run();
 
-    // holt die Scores vom Server und stellt sie dann dar || warum werden alle Karten nicht abgefragt (wegen play Button)? Weil auf der home Seite schon die Karten in den Local Storage gemacht wurde 
+    // holt die Scores vom Server und stellt sie dann dar 
     async function run(): Promise<void> {
         await getScoresFromServer();
         displayHighscores();
@@ -35,7 +35,7 @@ namespace Melmory {
 
     // holt die Scores vom Server
     async function getScoresFromServer(): Promise<void> {
-        // Antwort des Servers wird in eine Variable gespeichert || fetch() = Anfrage an den Server || await = wartet bis fetch komplett ausgeführt wurde und wandelt das Promise<Response> in Response um
+        // Antwort des Servers wird in eine Variable gespeichert 
         let response: Response = await fetch(serverUrl + "/get-all-scores");
         // Gibt die Antwort des Servers als JSON string aus und wird im scoreData array gespeichert 
         scoreData = await response.json();
@@ -45,13 +45,13 @@ namespace Melmory {
     function displayHighscores(): void {
         // Damit man sieht, dass der Client was macht
         console.log("Displaying " + scoreData.length + " scores...");
-        // sotiert das scoreData array in absteigender Reihenfolge abhängig von der Zeit (time_millis) || Bsp.: array von 1,3,5,4 --> 5,4,3,1
+        // sotiert das scoreData array in absteigender Reihenfolge abhängig von der Zeit (time_millis)
         scoreData.sort((n1, n2) => n1.time_millis - n2.time_millis); // https://stackoverflow.com/questions/21687907/typescript-sorting-an-array  --> https://www.w3schools.com/js/js_array_sort.asp 
 
         // score-container wird in HMTL gesucht und in eine Variable gespeichert
         let scoreContainerDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("score-container");
 
-        // Geht alles Scores in scoreData durch und stellt diese dann dar || Grob zusammengefasst: Für jede Scores werden HTML-Elemente erstellt, mit Daten befüllt und in richtiger Reihenfolge als Child (Unterelemente) dem score-container hinzugefügt
+        // Geht alles Scores in scoreData durch und stellt diese dann dar 
         for (let i: number = 0; i < scoreData.length; i++) {
             // ein div-Element wird erstellt und in scoreEntryDiv gespeichert
             let scoreEntryDiv: HTMLDivElement = <HTMLDivElement>document.createElement("div");
@@ -74,9 +74,9 @@ namespace Melmory {
             let scoreEntryTime: HTMLParagraphElement = <HTMLParagraphElement>document.createElement("p");
             // eine Klasse für css wird erstellt
             scoreEntryTime.setAttribute("class", "score-entry-time");
-            // Zeit wird in Sekunden berechnet, da sie auf der seite in sek. angezeigt werden soll || 1 sek. = 1000 millisek. deshalb macht man millisek./1000 um sekunden zahl zu bekommen
+            // Zeit wird in Sekunden berechnet, da sie auf der seite in sek. angezeigt werden soll
             let timeSeconds: number = scoreData[i].time_millis / 1000;
-            // Zeit in sekunden wird auf zwei Nachkommastellen aufgerundet || Bsp.: 1,234567 * 100 = 123,4567 || Math.round = rundet (4) auf die nächste ganze Zahl --> 123 --> 123/100 = 1,23 || Bei 1 Nachkommastelle: *10 /10; Bei 3 Nachkommastelle: *1000 /1000 
+            // Zeit in sekunden wird auf zwei Nachkommastellen aufgerundet 
             timeSeconds = Math.round(timeSeconds * 100) / 100; // https://stackoverflow.com/questions/11832914/how-to-round-to-at-most-2-decimal-places-if-necessary
             // Die Zeit für den aktuellen (in der Schleife aktuell) Score wird für den User ausgegeben 
             scoreEntryTime.textContent = timeSeconds + " s";

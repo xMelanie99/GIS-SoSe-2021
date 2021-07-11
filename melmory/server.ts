@@ -5,12 +5,12 @@ import * as url from "url";
 import { ParsedUrlQuery } from "querystring";
 
 export namespace Melmory {
-    // Die erhalten Daten von MongoDB werden in dieses (Array) Interfaceobjekt gespeichert und als JSON an den Client gesendet || selbe Namen (siehe admin.ts) für admin.ts und Datenbank
+    // Die erhalten Daten von MongoDB werden in dieses (Array) Interfaceobjekt gespeichert und als JSON an den Client gesendet 
     interface CardData {
         cardsUrl: string;
     }
 
-    // das Selbe (von Z.9, wie bei CardData) für die Scores 
+    
     interface ScoreData {
         username: string;
         time_millis: number;
@@ -33,22 +33,22 @@ export namespace Melmory {
 
     // Port der Datenbank || Adresse für MongoDB für die melmory Datenbank
     let databaseUrl: string = "mongodb+srv://noob1234:43_21_boon_@gis-ist-geil.uvkck.mongodb.net/Melmory?retryWrites=true&w=majority";
-    // -- wie funktioniert die? Mongo.MongoClient = ist eine importierte Klasse || wird benötigt um die Abfragen zu machen (bspw. um Datensatz hinzufügen/löschen)
+    // -- 
     let mongoClient: Mongo.MongoClient = undefined;
 
-    // -- 1. wird einmal ausgeführt, sobald der Server gestartet wird || console.log = damit man sieht das der Server läuft
+    // -- wird einmal ausgeführt, sobald der Server gestartet wird || console.log = damit man sieht das der Server läuft
     function handleListen(): void {
         console.log("Listening");
     }
 
-    // 2. Wenn der Client etwas anfragt (_request), dann gibt der Server den Client eine Antwort (_response)
+    // Wenn der Client etwas anfragt (_request), dann gibt der Server den Client eine Antwort (_response)
     async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> { // wird immer gesetzt
         // Metadaten werden gesetzt 
         _response.setHeader("content-type", "text/html; charset=utf-8");
         // -- Der Zugriff (request) wird auf dem Server erlaubt
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
-        // -- hier wurde die url von request genommen || geparste url = alles ist vorhanden: http + hostname + port + path component + query string
+        // -- hier wurde die url von request genommen 
         let requestUrl: url.UrlWithParsedQuery = url.parse(_request.url, true);
         // der query Teil von der url wurde in urlQuery gespeichert
         let urlQuery: ParsedUrlQuery = requestUrl.query;
@@ -57,7 +57,7 @@ export namespace Melmory {
         switch (requestUrl.pathname) {
             // case: prüft ob der angegebene Wert der mit der switch Variable übereinstimmt || wird geprüft ob die Bedingung tatsächlich, wie angegeben, erfüllt ist
             case "/get-all-card-urls":
-                // falls das der Fall ist, wird der code im case ausgeführt || es werden alle Karten aus der MongoDB (Karten urls) an den Client geschickt
+                // es werden alle Karten aus der MongoDB (Karten urls) an den Client geschickt
                 await sendClientAllCardURLs(_response);
                 // wird immer gesetzt und switch/case hört nach diesem case mit break auf bzw. prüft die nächsten nicht weiter 
                 break;
@@ -86,7 +86,7 @@ export namespace Melmory {
         _response.end();
     }
 
-    // 3. fragt bei MongoDB alle Daten, aus der Scores Collections, ab und schick diese dann als JSON an den Client
+    // fragt bei MongoDB alle Daten, aus der Scores Collections, ab und schick diese dann als JSON an den Client
     async function sendClientAllCardURLs(_response: Http.ServerResponse): Promise<void> {
         console.log("Sending client all card urls from mongodb...");
         // Verbindet sich mit der MongoDB (Melmory Datenbank)
@@ -94,10 +94,10 @@ export namespace Melmory {
 
         // MongoDB (Melmory) wird aufgerufen und die Collection (card_urls) wird in eine variable gespeichert
         let cardUrlsCollection: Mongo.Collection = mongoClient.db("Melmory").collection("card_urls");
-        // die Einträge in der Collection (card_url) werden in einem CardData Array gespeichert || find() = ruft alles ab
+        // die Einträge in der Collection (card_url) werden in einem CardData Array gespeichert
         let cardData: CardData[] = await cardUrlsCollection.find().toArray();
 
-        // JSON.stringify macht aus cardData einen JSON string || warum? damit der Client aus dem JSON string wieder ein CardData Array machen kann
+        // JSON.stringify macht aus cardData einen JSON string
         _response.write(JSON.stringify(cardData));
     }
 
@@ -138,9 +138,9 @@ export namespace Melmory {
 
         // MongoDB (Melmory) wird aufgerufen und die Collection (Scores) wird in eine variable gespeichert
         let scoresCollection: Mongo.Collection = mongoClient.db("Melmory").collection("Scores");
-        // die Einträge in der Collection (Scores) werden in einem ScoreData Array gespeichert || find() = ruft alles ab
+        // die Einträge in der Collection (Scores) werden in einem ScoreData Array gespeichert 
         let scoreData: ScoreData[] = await scoresCollection.find().toArray();
-        // JSON.stringify macht aus scoreData einen JSON string || warum? damit der Client aus dem JSON string wieder ein ScoreData Array machen kann
+        // JSON.stringify macht aus scoreData einen JSON string 
         _response.write(JSON.stringify(scoreData));
     }
 
@@ -152,7 +152,7 @@ export namespace Melmory {
 
         // MongoDB (Melmory) wird aufgerufen und die Collection (Scores) wird in eine variable gespeichert
         let scoresCollection: Mongo.Collection = mongoClient.db("Melmory").collection("Scores");
-        // siehe 78, 79 und 82 || beide Werte (username & timeMillis) werden in ein ScoreData gemacht, damit man das scoreData in die Collection hinzufügen kann
+        // beide Werte (username & timeMillis) werden in ein ScoreData gemacht, damit man das scoreData in die Collection hinzufügen kann
         let scoreData: ScoreData = { username: _name, time_millis: _timeMillis };
         // ein Eintrag wird der Collection (Scores) hinzugefügt
         scoresCollection.insertOne(scoreData);

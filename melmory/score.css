@@ -35,20 +35,19 @@ body {
     font-weight: bold;
     cursor: pointer;
 }
+
 #play-button img {
     margin-top: 10px;
     width: 50px;
 }
 
 #error {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
     color: rgba(252, 103, 103, 0.952);
     font-size: 20px;
     grid-area: header2;
     margin-top: 20px;
     text-align: center;
 }
-
 
 #back {
     grid-area: footer1;
@@ -85,7 +84,6 @@ body {
     height: 100px;
     background-color: rgba(255, 255, 255, 0.637);
     align-items: center;
-
 }
 
 /* Desktop */
@@ -108,18 +106,14 @@ body {
 @media screen and (min-width: 600px) and (max-width: 1024px) {
 
     .grid-box { 
-        
         grid-template-columns: 100%;
-      
         grid-template-rows: auto 5fr auto;
-
         grid-template-areas: 
         "header1"
         "header2"
         "header3"
         "content2"
         "footer1";
-    
         grid-gap: 25px;
     }
     
@@ -143,18 +137,14 @@ body {
     }
     
     .grid-box { 
-        
         grid-template-columns: 100%;
-      
         grid-template-rows: auto 5fr auto auto;
-
         grid-template-areas: 
             "header1"
             "header2"
             "header3"
             "content2"
             "footer1";
-    
         grid-gap: 25px;
     }
 
@@ -164,10 +154,6 @@ body {
 
     #back img {
         width:50px;
-    }
-
-    input {
-        width: auto;
     }
 
     #play-button {

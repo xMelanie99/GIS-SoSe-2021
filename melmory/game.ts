@@ -2,23 +2,23 @@ namespace Melmory {
 
     // wird benötigt um beim klicken einer Karte diese zu "merken" in dem es in selectedCards gespeichert wird
     interface Card {
-        // HTML Bild-Element wird gespeichert...
+
         element: HTMLImageElement;
-        // ...und die url dazu
+
         url: string;
     }
 
-    // Anzahl der verschiedenen Karten auf der Spielfläche || warum? Weil 8 versch. Karten aus dem Local Storage genommen werden soll
+    // Anzahl der verschiedenen Karten auf der Spielfläche 
     let pairCount: number = 8;
-    // warum? speichert die Anzahl an Pärchen, die man richtig geraden hat
+   
     let correctlyGuessedPairs: number = 0;
-    // Karten, die dann auf der Spielfläche sind, deshalb einen array || warum? umd sie zu mischen und später dar zu stellen
+    // Karten, die dann auf der Spielfläche sind, deshalb einen array 
     let cardPool: string[] = [];
 
     // ein leeres Array vom typ Card muss definiert werden, damit es später beim Code zu keiner Fehlermeldung kommt (weil bspw. später .length aufgerufen wird und selectedCards definiert werden muss)
     let selectedCards: Card[] = [];
 
-    // Z. 22 - 24 sind für die Zeitmessung da || warum? die Zeit wird erst gemessen sobald die ertse Karte ausgewählt wird
+    // Z. 22 - 24 sind für die Zeitmessung da 
     let setTheStartTime: boolean = true;
     // wird benutzt um den timer zu starten (startTime), sobald die erste Karte angeklickt wurde
     let startTime: number = 0;
@@ -39,7 +39,7 @@ namespace Melmory {
 
     }
 
-    // 1. wählt zufällig Karten aus dem Local Storage aus und mischt diese dann
+    // wählt zufällig Karten aus dem Local Storage aus und mischt diese dann
     function randomlyPickCardsFromLocalStorage(): void {
         // Frägt die Kartenanzahl im Local Storage ab
         let cardCount: number = Number(localStorage.getItem("card_count"));
@@ -53,10 +53,10 @@ namespace Melmory {
             allCards.push(cardUrl);
         }
 
-        // shuffel = mischt den array, den ihm gegeben wird --> muss vom  Typ string[] sein
+        
         shuffle(allCards);
 
-        // allCards = array in dem die urls aus dem Local Storage || for-Schleife macht dies 8x
+        
         for (let i: number = 0; i < pairCount; i++) {
             // pop() = löscht den letzten Eintrag im allCards array und gibt diesen zurück
             let randomCard: string = allCards.pop();
@@ -84,19 +84,19 @@ namespace Melmory {
         }
     }
 
-    // shuffel = mischt das array, welches ihm als Parameter gegeben wird --> muss vom  Typ string[] sein
+    
     function shuffle(_array: string[]): void {
         // geht über das _array über und wechselt den Eintrag an Position i mit einem anderen zufälligen Eintrag im array
         for (let i: number = 0; i < _array.length; i++) {
             // der Eintrag an Position i wird zwischen gespeichert
             let tmp: string = _array[i];
-            // randomIndex = random Position im _array, wird mit dem Wert an der Stelle i vertauscht ||Beispiel: Math.random() = 0,99; _array.length = 8 --> 0,99 * 8 = 7,92 --> Math.floor() (abrunden) --> 7 
+            // randomIndex = random Position im _array, wird mit dem Wert an der Stelle i vertauscht 
             let randomIndex: number = Math.floor(Math.random() * _array.length);
-            // Beispiel || warum wird das gemacht? Um die urls zu mischen
-            // tmp bleibt immer 4
-            // _array[i]: 4, _array[randomIndex]: 9
-            // = _array[i]: 9, _array[randomIndex]: 9
-            // _array[randomIndex]: 4, _array[i]: 9
+            
+            
+            
+            
+            
             _array[i] = _array[randomIndex];
             _array[randomIndex] = tmp;
         }
@@ -110,16 +110,16 @@ namespace Melmory {
         for (let i: number = 0; i < cardPool.length; i++) {
             // ein neues div wird erstellt und in cardDiv gespeichert
             let cardDiv: HTMLDivElement = <HTMLDivElement>document.createElement("div");
-            // für css zum gestalten
+            
             cardDiv.setAttribute("class", "card-div");
 
             // neues img element wird erstellt und in cardImg gespeichert
             let cardImg: HTMLImageElement = <HTMLImageElement>document.createElement("img");
             // Das Sakura Bild (Kartenrückseite) wird dem cardImg zugewiesen
             cardImg.src = "./pictures/ui/sakura.png";
-            // --Jede Rückseite bekommen verschiedene id's || warum i? Damit das onCardClick() weiß an welcher Position die Karte im cardPool array war
+            // --Jede Rückseite bekommen verschiedene id's 
             cardImg.setAttribute("id", i.toString());
-            // für css
+            
             cardImg.setAttribute("class", "card-image");
             // beim klicken wird onCardClick() aufgerufen
             cardImg.addEventListener("click", onCardClick);
@@ -135,9 +135,9 @@ namespace Melmory {
     function onCardClick(_event: Event): void {
         // starten den Timer für die Zeitmessung
         if (setTheStartTime) {
-            // Date() = Datums Klasse, man kann Anfragen bspw. zum loken Tag/Woche/Monat und Jahr || .getTime() = gibt die momentane Zeit in Millisek. aus
+            
             startTime = new Date().getTime(); // https://stackoverflow.com/questions/313893/how-to-measure-time-taken-by-a-function-to-execute
-            // muss gesetzt werden damit, diese if-Abfrage nicht nochmal ausgeführt wird --> wird nur bei der ersten Karte ausgeführt, die angegeklickt wird
+            // muss gesetzt werden damit, diese if-Abfrage nicht nochmal ausgeführt wird
             setTheStartTime = false;
         }
 
@@ -157,7 +157,7 @@ namespace Melmory {
             // Falls selectedCards array leer ist, kann die angeklickte Karte direkt dem selectedCards array hinzugefügt werden
             if (selectedCards.length == 1) {
                 let arrayZeroPos: number = Number(selectedCards[0].element.id);
-                // wenn weimal die selbe Karte angeklickt wurde
+                // wenn zeimal die selbe Karte angeklickt wurde
                 if (arrayZeroPos == cardPoolIndex) {
                     // geklickte Karte wird auf true gesetzt, damit man weiß, dass die Karte im selectedCards[] enthalten ist
                     hasArraySelectedCard = true;
@@ -167,7 +167,7 @@ namespace Melmory {
             if (!hasArraySelectedCard) {
                 selectedCards.push(card);
             }
-            // cardPool[cardPoolIndex] = url der angeklickten Karte im cardPool[] --> wird angezeigt || .src = aus HTML (<img src=...)
+            // cardPool[cardPoolIndex] = url der angeklickten Karte im cardPool[] --> wird angezeigt 
             cardImage.src = cardPool[cardPoolIndex];
 
             // setTimeout() = wird gemacht damit beide Karten angezeigt bevor sie wieder umgedreht werden
@@ -193,9 +193,9 @@ namespace Melmory {
                 if (correctlyGuessedPairs == pairCount) {
                     // Wenn das Spiel beendet wurde, wird diese Zeit genommen
                     let endTime: number = new Date().getTime();
-                    // Die Dauer wird in millisek. berchnet ||Bsp. startTime: 5000, endTime: 7000 --> duration = 2000
+                    // Die Dauer wird in millisek. berchnet 
                     let durationMillis: number = endTime - startTime; 
-                    // Zeit in sekunden wird auf zwei Nachkommastellen aufgerundet || Bsp.: 1,234567 * 100 = 123,4567 || Math.round = rundet (4) auf die nächste ganze Zahl --> 123 --> 123/100 = 1,23 || Bei 1 Nachkommastelle: *10 /10; Bei 3 Nachkommastelle: *1000 /1000
+                    // Zeit in sekunden wird auf zwei Nachkommastellen aufgerundet
                     durationMillis = Math.round(durationMillis * 100) / 100; // https://stackoverflow.com/questions/11832914/how-to-round-to-at-most-2-decimal-places-if-necessary
 
                     //zu dem key "time_millis" wird der Wert gesetzt, wie lange das Spiel gedauert hat

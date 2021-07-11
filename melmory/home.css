@@ -11,6 +11,22 @@ body {
     margin: 0;
 }
 
+.grid-box { 
+    display: grid;
+    /*Spalte*/
+    grid-template-columns: 33% 33% 33%;
+    /*Zeile*/ 
+    grid-template-rows: 15% 70% 15%;
+    grid-template-areas: 
+        "header1 header2 header3"
+        "content1 content2 content3 "
+        "footer1 footer2 footer3";
+
+    grid-gap: 25px;
+
+
+}
+
 .nav-content {
     grid-area: content2;
     color: rgb(145, 145, 167);
@@ -19,7 +35,12 @@ body {
     cursor: pointer; /* https://de.w3docs.com/snippets/css/wie-kann-man-den-mauszeiger-mit-css-andern.html */
 }
 
+#play {
+    grid-area: content2;
+}
+
 .nav {
+    grid-area: content2;
     text-decoration: none;
     color:rgb(145, 145, 167);
     font-size: 40px;
@@ -34,10 +55,23 @@ body {
 }
 
 #error {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
     color: rgba(252, 103, 103, 0.952);
     font-size: 20px;
     grid-area: content2;
+}
+
+#daten {
+    grid-area: footer2;
+    text-align: center;
+}
+
+div a {
+    text-decoration: none;
+}
+
+#pdf {
+    grid-area: footer3;
+    text-align: center;
 }
 
 /* Desktop */
@@ -59,27 +93,15 @@ body {
         justify-content: center;
         overflow-x: hidden;
     }
-    .grid-box { 
-        
+    .grid-box {    
         grid-template-columns: 100%;
-      
         grid-template-rows: auto 5fr auto auto;
-
         grid-template-areas: 
             "header1"
             "content2"
-            "footer2";
-    
+            "footer2"
+            "footer3";
         grid-gap: 25px;
-    }
-    
-    #back {
-        width: 100%;  
-    }
-
-    #back img {
-        width:50px;
-        margin-left: 25px;
     }
 }
 
@@ -93,36 +115,21 @@ body {
     }
 
     .grid-box { 
-        
         grid-template-columns: 100%;
-      
         grid-template-rows: auto 5fr auto auto;
-
         grid-template-areas: 
-            "header1"
-            "content2"
-            "footer2";
+        "header1"
+        "content2"
+        "footer2"
+        "footer3";
         grid-gap: 25px;
     }
-    
-    #back {
-        width: 100%;  
+
+    #daten {
+        font-size: 10px;
     }
 
-    #back img {
-        width:50px;
-        margin-left: 25px;
-    }
-
-    input {
-        width: auto;
-    }
-
-    #play-button {
-        font-size: 25px;
-    }
-
-    .score-entry {
-        padding-left: 40px;
+    #pdf {
+        font-size: 10px;
     }
   }
