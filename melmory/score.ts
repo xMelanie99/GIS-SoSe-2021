@@ -123,7 +123,7 @@ namespace Melmory {
         // Abfrage wenn weniger als 8 Karten vorhanden sind
         if (cardCount < 8) {
             // Meldung an den User, dass zu wenige Karten vorhanden sind 
-            gameErrorDiv.textContent = "At least 8 unique cards are needed! Add more on the admin page.";
+            gameErrorDiv.textContent = "At least 8 unique cards are needed! Add more on the `change cards´ page.";
         } else {
             // Bei genug Karten wird der User weiter an die Game Seite geleitet || simuliert einen Maus klick und man kann mit zurück Button auf die vorherige Seite
             window.location.href = "game.html"; //https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
